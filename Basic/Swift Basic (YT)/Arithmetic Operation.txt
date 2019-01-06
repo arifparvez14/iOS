@@ -1,0 +1,23 @@
+import Foundation 
+
+var num1 = 20
+var num2 = 5
+
+print(num1+num2)
+print(num1-num2)
+print(num1*num2)
+print(num1/num2)
+print(num1 % num2)
+
+//No ++ or -- (increment or Decrement operator)
+num1 += 2
+print(num1)
+
+var name = "Ariful Islam is \'my\' Name"
+print(name)
+var age = "My Age is \(num1)"
+print(age)
+
+
+
+

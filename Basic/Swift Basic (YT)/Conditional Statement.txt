@@ -1,0 +1,32 @@
+import Foundation 
+
+var isRainy = true
+if (!isRainy){
+    print("Use Umbrella")
+}
+else{
+    print("Dont fuck your Umbrella")
+}
+//>,>=,<,<=,==,!=
+var num = 30
+if(num >= 80){
+    print("A+")
+}
+else if(num >= 70 && num <= 79){
+    print("A")
+}
+else if(num >= 60 && num <= 69){
+    print("A-")
+}
+else if(num >= 50 && num <= 59){
+    print("B")
+}
+else if(num >= 0 || num <= 40){
+    print("Fail")
+}
+ 
+
+
+
+
+

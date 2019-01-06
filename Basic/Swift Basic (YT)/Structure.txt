@@ -1,0 +1,19 @@
+import Foundation 
+
+struct userLocation{
+    var name: String
+    var latitude: Double
+    var longitude: Double
+}
+var myLoc = userLocation(name: "Arif",latitude:41.123,longitude:42.110)
+print(myLoc.name)
+print(myLoc.latitude)
+print(myLoc.longitude)
+
+var myLoc2 = userLocation(name: "Tarif",latitude:41.123,longitude:42.110)
+func getLoc(loc:userLocation)
+{
+    print(loc.name)
+}
+getLoc(loc:myLoc)
+getLoc(loc:myLoc2)

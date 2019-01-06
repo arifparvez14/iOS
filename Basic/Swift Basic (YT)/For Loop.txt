@@ -1,0 +1,36 @@
+import Foundation 
+
+for i in 1...10{
+    print(i)
+}
+for num in 10...20{
+    print(num)
+}
+
+for num in stride(from: 0, to: 11, by:2){
+    print(num)
+} 
+for num in stride(from:50, to:0, by: -5){
+    print(num)
+}
+
+var list = ["Shoe","Watch","Bag"]
+for item in list{
+    print(item)
+}
+for(index,value) in list.enumerated(){
+    print(index)
+    print(value)
+}
+var legend = ["blue":"Ocean","green":"Tree"]
+for item in legend{
+    print(item)
+    print(item.key)
+    print(item.value)
+}
+
+  
+
+
+
+

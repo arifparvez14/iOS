@@ -1,0 +1,27 @@
+import Foundation 
+
+class Parent{
+    func parentMethod(){
+        print("This is parent method")
+    }
+    func getName(){
+        print("This is parent getName")
+    }
+}
+var p = Parent()
+p.parentMethod()
+
+
+class Child: Parent{
+    func childMethod(){
+        print("This is child method")
+    }
+    override func getName(){
+        print("This is child getName")
+    }
+}
+var c = Child()
+c.childMethod()
+c.parentMethod()
+c.getName()
+

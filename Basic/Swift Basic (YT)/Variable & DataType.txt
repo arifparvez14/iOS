@@ -1,0 +1,13 @@
+import Foundation 
+
+print("Hello World")
+var age = 20
+var sent = "My name is Avi"
+
+print(age)
+print(sent)
+var pi = 3.14 //float, double used for long floating value
+var isRainy = false
+
+print(pi)
+print(isRainy)

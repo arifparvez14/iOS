@@ -1,0 +1,27 @@
+import Foundation 
+
+var myDict = ["blue":"Water","green":"Land"]
+print(myDict["blue"]!)//Im sure that blue is there
+print(myDict["orange"])//Im not sure thats why nill
+//print(myDict["orange"]!)//Im telling that im sure but it wasent there thats why error
+
+myDict["red"] = "Blood"
+print(myDict)
+
+myDict["blue"] = "Ocean"
+print(myDict)
+
+print(myDict.count)
+myDict.removeValue(forKey:"red")
+print(myDict)
+
+//myDict.removeAll
+print(myDict)
+
+
+
+
+
+
+
+

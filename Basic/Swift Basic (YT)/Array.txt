@@ -1,0 +1,32 @@
+import Foundation 
+
+var list = ["Bag","Pen","Shoe"]
+print(list[1])
+
+list.append("Mobile")
+print(list)
+print(list.count)//Count Array Element
+
+print(list.first)//print first element of array -- Optional indicate that either there is a value you know it for sure
+//or there isent any value. Remove it by (!) which means yes there is a value for sure. See next example.
+print(list.last!)//print last element
+list.remove(at: 3)//remove third index element
+print(list)
+list.removeAll()//Remove all element of array
+print(list)
+
+var newArr = [Int]() //create an empty array of int type
+print(newArr)
+newArr.append(5)
+newArr.append(6)
+print(newArr)
+
+newArr[0] = 10 //Replace the first element with 10
+print(newArr)
+
+ 
+
+
+
+
+

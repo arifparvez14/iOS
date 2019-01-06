@@ -1,0 +1,33 @@
+import Foundation 
+
+//Use SwitchCase 
+
+enum Direction{
+    case North
+    case South
+    case East
+    case West
+}
+var dir = Direction.South
+
+switch dir{
+case Direction.North:
+    print("Go Forward")
+case Direction.South:
+    print("Go Backward")
+case .East:
+    print("Take a Right")
+case .West:
+    print("Take a Left")
+}
+
+//Without Switch (rawValue) use
+
+enum Toss:String{
+    case Head = "Head is Decided"
+    case Tail = "Tail is Decided"
+}
+var toss = Toss.Head
+print(toss.rawValue)
+
+

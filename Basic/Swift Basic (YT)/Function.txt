@@ -1,0 +1,21 @@
+import Foundation 
+
+func firstFunction(){
+    print("First Task")
+    print("Function")
+}
+
+firstFunction()
+
+func addFunc(num1:Int, num2:Int){
+    print(num1 + num2)
+}
+addFunc(num1: 5, num2: 10)
+
+func mulFunc(num1:Int, num2:Int) -> Int{ //Return type describe by -> sign
+    return num1 * num2
+}
+
+var num = mulFunc(num1: 5, num2: 10)
+print(num)
+
