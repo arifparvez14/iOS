@@ -7,7 +7,7 @@ struct Concentration
     private var indexOfOneAndOnlyFaceUpCard: Int? {//Optional coz there is some case where no or two card face up
         get{
             return cards.indices.filter {cards[$0].isFaceUp}.oneAndOnly
-            //return faceUpCardIndicies.count == 1 ? faceUpCardIndicies.first : nil
+            // return faceUpCardIndicies.count == 1 ? faceUpCardIndicies.first : nil
 //            var foundIndex: Int?
 //            for index in cards.indices {
 //                if cards[index].isFaceUp {
