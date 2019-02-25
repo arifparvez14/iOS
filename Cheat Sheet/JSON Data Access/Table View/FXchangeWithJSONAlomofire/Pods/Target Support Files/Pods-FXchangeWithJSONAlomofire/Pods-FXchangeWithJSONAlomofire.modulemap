@@ -1,0 +1,6 @@
+framework module Pods_FXchangeWithJSONAlomofire {
+  umbrella header "Pods-FXchangeWithJSONAlomofire-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_Alamofire_with_Table_View {
+  umbrella header "Pods-Alamofire with Table View-umbrella.h"
+
+  export *
+  module * { export * }
+}
