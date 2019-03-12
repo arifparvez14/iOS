@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SaveUserSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brS-My-H1Z">
+                                <rect key="frame" x="20" y="158" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pww-gF-cYg">
+                                <rect key="frame" x="20" y="208" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OrS-4M-ple"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSJ-5t-5cu">
+                                <rect key="frame" x="20" y="328" width="335" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udx-Ku-eiW">
+                                <rect key="frame" x="20" y="278" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ib-fT-3Lx">
+                                <rect key="frame" x="20" y="428" width="335" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWl-VQ-Ix0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arU-0T-Vnb">
+                                <rect key="frame" x="20" y="478" width="335" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3a2-YU-8QL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JSJ-5t-5cu" secondAttribute="trailing" constant="20" id="1Q1-SN-3mY"/>
+                            <constraint firstItem="Udx-Ku-eiW" firstAttribute="leading" secondItem="brS-My-H1Z" secondAttribute="leading" id="1eA-l7-qRd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3ib-fT-3Lx" secondAttribute="trailing" constant="20" id="6T8-hy-byu"/>
+                            <constraint firstItem="JSJ-5t-5cu" firstAttribute="top" secondItem="Udx-Ku-eiW" secondAttribute="top" constant="50" id="8CG-wv-kpF"/>
+                            <constraint firstItem="JSJ-5t-5cu" firstAttribute="height" secondItem="Pww-gF-cYg" secondAttribute="height" id="Ewa-KD-P9U"/>
+                            <constraint firstItem="Udx-Ku-eiW" firstAttribute="trailing" secondItem="brS-My-H1Z" secondAttribute="trailing" id="HkC-Ny-0IB"/>
+                            <constraint firstItem="Udx-Ku-eiW" firstAttribute="top" secondItem="brS-My-H1Z" secondAttribute="top" constant="120" id="JBK-4K-jLf"/>
+                            <constraint firstItem="brS-My-H1Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="138" id="Jct-qo-H0N"/>
+                            <constraint firstItem="Udx-Ku-eiW" firstAttribute="height" secondItem="brS-My-H1Z" secondAttribute="height" id="SJB-SB-yRS"/>
+                            <constraint firstItem="Pww-gF-cYg" firstAttribute="top" secondItem="brS-My-H1Z" secondAttribute="top" constant="50" id="Vj5-FS-ubZ"/>
+                            <constraint firstItem="arU-0T-Vnb" firstAttribute="top" secondItem="3ib-fT-3Lx" secondAttribute="top" constant="50" id="aKv-4T-6Ex"/>
+                            <constraint firstItem="brS-My-H1Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cfy-k0-0jz"/>
+                            <constraint firstItem="3ib-fT-3Lx" firstAttribute="top" secondItem="Udx-Ku-eiW" secondAttribute="top" constant="150" id="jVD-BF-Wrm"/>
+                            <constraint firstItem="3ib-fT-3Lx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kGh-RQ-VPD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="brS-My-H1Z" secondAttribute="trailing" constant="20" id="mrb-FU-Ert"/>
+                            <constraint firstItem="3ib-fT-3Lx" firstAttribute="width" secondItem="JSJ-5t-5cu" secondAttribute="width" id="oQ1-TV-yyC"/>
+                            <constraint firstItem="JSJ-5t-5cu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pTk-0L-tHL"/>
+                            <constraint firstItem="arU-0T-Vnb" firstAttribute="trailing" secondItem="3ib-fT-3Lx" secondAttribute="trailing" id="pbK-aB-oMK"/>
+                            <constraint firstItem="arU-0T-Vnb" firstAttribute="leading" secondItem="3ib-fT-3Lx" secondAttribute="leading" id="sg6-c1-SBM"/>
+                            <constraint firstItem="Pww-gF-cYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tro-wc-82l"/>
+                            <constraint firstItem="arU-0T-Vnb" firstAttribute="height" secondItem="3ib-fT-3Lx" secondAttribute="height" id="vMX-zx-HAE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pww-gF-cYg" secondAttribute="trailing" constant="20" id="xpB-Rm-HcA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="clearButton" destination="arU-0T-Vnb" id="Cu6-Np-E5n"/>
+                        <outlet property="firstName" destination="Pww-gF-cYg" id="6ik-PT-UTR"/>
+                        <outlet property="lastName" destination="JSJ-5t-5cu" id="Y6z-eZ-Kis"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
