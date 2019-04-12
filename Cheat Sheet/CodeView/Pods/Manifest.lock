@@ -1,0 +1,18 @@
+PODS:
+  - SwiftyCodeView (0.3.2):
+    - SwiftyCodeView/Core (= 0.3.2)
+  - SwiftyCodeView/Core (0.3.2)
+
+DEPENDENCIES:
+  - SwiftyCodeView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftyCodeView
+
+SPEC CHECKSUMS:
+  SwiftyCodeView: ac1092fd58e6c619501d147ef78c935c1ea789a7
+
+PODFILE CHECKSUM: d2b30b2634c2b92b5d461f9088bff3109b7a3336
+
+COCOAPODS: 1.6.1
