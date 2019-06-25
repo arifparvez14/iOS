@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FA42257229CD93200DAEB0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA42256229CD93200DAEB0F /* AppDelegate.swift */; };
+		3FA42259229CD93200DAEB0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA42258229CD93200DAEB0F /* ViewController.swift */; };
+		3FA4225C229CD93200DAEB0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4225A229CD93200DAEB0F /* Main.storyboard */; };
+		3FA4225E229CD93400DAEB0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4225D229CD93400DAEB0F /* Assets.xcassets */; };
+		3FA42261229CD93400DAEB0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4225F229CD93400DAEB0F /* LaunchScreen.storyboard */; };
+		3FA42269229CDB7200DAEB0F /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA42268229CDB7200DAEB0F /* GalleryViewController.swift */; };
+		3FA4226C229CF87B00DAEB0F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4226A229CF87B00DAEB0F /* CollectionViewCell.swift */; };
+		3FA4226D229CF87B00DAEB0F /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4226B229CF87B00DAEB0F /* CollectionViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3FA42253229CD93200DAEB0F /* Take, Save and retreive a photo in iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Take, Save and retreive a photo in iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FA42256229CD93200DAEB0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FA42258229CD93200DAEB0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FA4225B229CD93200DAEB0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FA4225D229CD93400DAEB0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FA42260229CD93400DAEB0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3FA42262229CD93400DAEB0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FA42268229CDB7200DAEB0F /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		3FA4226A229CF87B00DAEB0F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		3FA4226B229CF87B00DAEB0F /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FA42250229CD93200DAEB0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FA4224A229CD93200DAEB0F = {
+			isa = PBXGroup;
+			children = (
+				3FA42255229CD93200DAEB0F /* Take, Save and retreive a photo in iOS */,
+				3FA42254229CD93200DAEB0F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FA42254229CD93200DAEB0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FA42253229CD93200DAEB0F /* Take, Save and retreive a photo in iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FA42255229CD93200DAEB0F /* Take, Save and retreive a photo in iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3FA42256229CD93200DAEB0F /* AppDelegate.swift */,
+				3FA42258229CD93200DAEB0F /* ViewController.swift */,
+				3FA4225A229CD93200DAEB0F /* Main.storyboard */,
+				3FA42268229CDB7200DAEB0F /* GalleryViewController.swift */,
+				3FA4226A229CF87B00DAEB0F /* CollectionViewCell.swift */,
+				3FA4226B229CF87B00DAEB0F /* CollectionViewCell.xib */,
+				3FA4225D229CD93400DAEB0F /* Assets.xcassets */,
+				3FA4225F229CD93400DAEB0F /* LaunchScreen.storyboard */,
+				3FA42262229CD93400DAEB0F /* Info.plist */,
+			);
+			path = "Take, Save and retreive a photo in iOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FA42252229CD93200DAEB0F /* Take, Save and retreive a photo in iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FA42265229CD93400DAEB0F /* Build configuration list for PBXNativeTarget "Take, Save and retreive a photo in iOS" */;
+			buildPhases = (
+				3FA4224F229CD93200DAEB0F /* Sources */,
+				3FA42250229CD93200DAEB0F /* Frameworks */,
+				3FA42251229CD93200DAEB0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Take, Save and retreive a photo in iOS";
+			productName = "Take, Save and retreive a photo in iOS";
+			productReference = 3FA42253229CD93200DAEB0F /* Take, Save and retreive a photo in iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FA4224B229CD93200DAEB0F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = com.arif;
+				TargetAttributes = {
+					3FA42252229CD93200DAEB0F = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 3FA4224E229CD93200DAEB0F /* Build configuration list for PBXProject "Take, Save and retreive a photo in iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FA4224A229CD93200DAEB0F;
+			productRefGroup = 3FA42254229CD93200DAEB0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FA42252229CD93200DAEB0F /* Take, Save and retreive a photo in iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FA42251229CD93200DAEB0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FA42261229CD93400DAEB0F /* LaunchScreen.storyboard in Resources */,
+				3FA4225E229CD93400DAEB0F /* Assets.xcassets in Resources */,
+				3FA4226D229CF87B00DAEB0F /* CollectionViewCell.xib in Resources */,
+				3FA4225C229CD93200DAEB0F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FA4224F229CD93200DAEB0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FA42269229CDB7200DAEB0F /* GalleryViewController.swift in Sources */,
+				3FA42259229CD93200DAEB0F /* ViewController.swift in Sources */,
+				3FA4226C229CF87B00DAEB0F /* CollectionViewCell.swift in Sources */,
+				3FA42257229CD93200DAEB0F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3FA4225A229CD93200DAEB0F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FA4225B229CD93200DAEB0F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FA4225F229CD93400DAEB0F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FA42260229CD93400DAEB0F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FA42263229CD93400DAEB0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3FA42264229CD93400DAEB0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FA42266229CD93400DAEB0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNL9R4PGZF;
+				INFOPLIST_FILE = "Take, Save and retreive a photo in iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arif.Take--Save-and-retreive-a-photo-in-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FA42267229CD93400DAEB0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNL9R4PGZF;
+				INFOPLIST_FILE = "Take, Save and retreive a photo in iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arif.Take--Save-and-retreive-a-photo-in-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FA4224E229CD93200DAEB0F /* Build configuration list for PBXProject "Take, Save and retreive a photo in iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA42263229CD93400DAEB0F /* Debug */,
+				3FA42264229CD93400DAEB0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FA42265229CD93400DAEB0F /* Build configuration list for PBXNativeTarget "Take, Save and retreive a photo in iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA42266229CD93400DAEB0F /* Debug */,
+				3FA42267229CD93400DAEB0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FA4224B229CD93200DAEB0F /* Project object */;
+}
