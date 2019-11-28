@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D5C3FBB7-C0A3-4882-92E0-A59DB2846E53"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFB12B83-FA37-47C0-8DCF-1F2633332A2F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVMT01/Service/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getAllMovieData(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB39B03E-DE76-498F-8453-820FCD796472"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVMT01/Service/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getAllMovieData(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90BED80E-007F-43FF-86D8-3B9AFD610D1B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVMT01/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "90BED80E-007F-43FF-86D8-3B9AFD610D1B - 964af01ff2ed5430"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;MVVMT01.MovieModel&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MVVMT01.ViewController.getData() -&gt; ()"
+                  moduleName = "MVVMT01"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/siliconmac15/Desktop/MVVM/MVVMT01/MVVMT01/Controller/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "330">
+               </Location>
+               <Location
+                  uuid = "90BED80E-007F-43FF-86D8-3B9AFD610D1B - 8042fefa2b705101"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MVVMT01.MovieModel) -&gt; MVVMT01.MovieViewModel in closure #1 (Swift.Optional&lt;Swift.Array&lt;MVVMT01.MovieModel&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MVVMT01.ViewController.getData() -&gt; ()"
+                  moduleName = "MVVMT01"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/siliconmac15/Desktop/MVVM/MVVMT01/MVVMT01/Controller/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
