@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SingleProgressBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5kv-72-zVF">
+                                <rect key="frame" x="132" y="452" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="vh8-T3-BTf"/>
+                                    <constraint firstAttribute="width" constant="150" id="xlW-jj-xv0"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-9j-8DT">
+                                <rect key="frame" x="316" y="442.5" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="JqG-3V-4MP"/>
+                                    <constraint firstAttribute="height" constant="21" id="vod-Dj-Eds"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqG-m4-BT7">
+                                <rect key="frame" x="184" y="339" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AaK-Gz-HzX"/>
+                                    <constraint firstAttribute="width" constant="46" id="nKa-b0-WaL"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zr7-2L-GaX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="j4Y-9j-8DT" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6J8-lO-zKZ"/>
+                            <constraint firstItem="5kv-72-zVF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HjZ-g0-xaJ"/>
+                            <constraint firstItem="5kv-72-zVF" firstAttribute="top" secondItem="XqG-m4-BT7" secondAttribute="bottom" constant="83" id="XIc-a0-1tp"/>
+                            <constraint firstItem="5kv-72-zVF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="giZ-vh-fGB"/>
+                            <constraint firstItem="XqG-m4-BT7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rEs-Kt-R7K"/>
+                            <constraint firstItem="j4Y-9j-8DT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="130" id="rhO-4h-5iK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressLabel" destination="j4Y-9j-8DT" id="SjF-Z3-RPL"/>
+                        <outlet property="progressView" destination="5kv-72-zVF" id="PcJ-n4-wEE"/>
+                        <outlet property="startCount" destination="XqG-m4-BT7" id="jMA-Vn-gVr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="139"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5826D846-54D8-45E7-9F2F-DF42A4C17F51"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35560033-122F-423C-B49B-12EBA843BC4A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SingleProgressBar/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "35560033-122F-423C-B49B-12EBA843BC4A - c4fa323c453f4004"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SingleProgressBar.ViewController.startCount(Any) -&gt; ()"
+                  moduleName = "SingleProgressBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/siliconmac15/Desktop/Swift/SingleProgressBar/SingleProgressBar/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "35560033-122F-423C-B49B-12EBA843BC4A - d0e4703a2a194a7c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSTimer) -&gt; () in SingleProgressBar.ViewController.startCount(Any) -&gt; ()"
+                  moduleName = "SingleProgressBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/siliconmac15/Desktop/Swift/SingleProgressBar/SingleProgressBar/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
