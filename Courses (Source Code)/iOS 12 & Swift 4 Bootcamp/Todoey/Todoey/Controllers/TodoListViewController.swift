@@ -8,13 +8,26 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 class TodoListViewController: UITableViewController {
 
     //var itemArray = [Item]() //This used for codable
-    var itemArray = [ItemList]() //Core Data model
+    //var itemArray = [ItemList]() //Core Data model
+    var itemArray: Results<Items>?
+    let realm = try! Realm()
     
+    // <-- Load categories for core data -->
+    /*
     var selectedCategory: Categories? {
+        didSet {
+            loadItem()
+        }
+    }
+    */
+    
+    //Load categories for realm
+    var selectedCategory: Category? {
         didSet {
             loadItem()
         }
@@ -34,16 +47,18 @@ class TodoListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemArray.count
+        return itemArray?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
         
-        let item = itemArray[indexPath.row]
-        
-        cell.textLabel?.text = item.title
-        cell.accessoryType = item.done ? .checkmark : .none
+        if let item = itemArray?[indexPath.row] {
+            cell.textLabel?.text = item.title
+            cell.accessoryType = item.done ? .checkmark : .none
+        } else {
+            cell.textLabel?.text = "No Items Added"
+        }
         
         return cell
     }
@@ -51,17 +66,37 @@ class TodoListViewController: UITableViewController {
     //MARK: - Tableview view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // <-- Code snipped for core data -->
+        
         //Can update like this
         //itemArray[indexPath.row].setValue("Complete", forKey: "title)
-        
-        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         //Remove element from core data
         //context.delete(itemArray[indexPath.row])
         //itemArray.remove(at: indexPath.row)
+        //tableView.deselectRow(at: indexPath, animated: true)
         
+        //itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        //saveItem()
         
-        saveItem()
+        // <-- Code snipped for Realm -->
+        //Update using realm
+        
+        if let item = itemArray?[indexPath.row] {
+            do {
+                try realm.write {
+                    //For update
+                    item.done = !item.done
+                    
+                    //For delete
+                    //realm.delete(item)
+                }
+            } catch {
+                print("Saving done status, \(error)")
+            }
+        }
+        
+        tableView.reloadData()
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -75,7 +110,7 @@ class TodoListViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             
-           //Code snipped used for Codable
+           // <-- Code snipped used for Codable -->
             
             /*let newItem = Item()
               newItem.title = textField.text!
@@ -83,14 +118,28 @@ class TodoListViewController: UITableViewController {
               self.saveItem()*/
 
             
-            //Code snipped for core data
+            // <-- Code snipped for core data -->
+             /*
+                let newData = ItemList(context: self.context)
+                newData.title = textField.text!
+                newData.done = false
+                newData.parentCategory = self.selectedCategory
+                self.itemArray.append(newData)
+                */
             
-            let newData = ItemList(context: self.context)
-            newData.title = textField.text!
-            newData.done = false
-            newData.parentCategory = self.selectedCategory
-            self.itemArray.append(newData)
-            self.saveItem()
+            // <-- Code snipped for realm -->
+            if let currentCategory = self.selectedCategory {
+                do {
+                    try self.realm.write {
+                        let newData = Items()
+                        newData.title = textField.text!
+                        currentCategory.items.append(newData)
+                    }
+                }catch {
+                    print("Error saving new items, \(error)")
+                }
+            }
+            self.tableView.reloadData()
         }
         
         alert.addTextField { (alertTextField) in
@@ -127,7 +176,7 @@ class TodoListViewController: UITableViewController {
     }*/
     
     //MARK: - Core Data Model Manipulate Methods
-    
+    /*
     func saveItem() {
         
         do {
@@ -156,7 +205,16 @@ class TodoListViewController: UITableViewController {
         }
         tableView.reloadData()
     }
+    */
     
+    //MARK: - Realm Model Manipulate Methods
+    
+    func loadItem() {
+        
+        itemArray = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        
+        tableView.reloadData()
+    }
 }
 
 //MARK: - UISearchBar Methods
@@ -171,7 +229,7 @@ extension TodoListViewController: UISearchBarDelegate {
         
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
-        loadItem(with: request, predicate: predicate)
+        //loadItem(with: request, predicate: predicate)
 
     }
     
