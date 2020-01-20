@@ -133,6 +133,7 @@ class TodoListViewController: UITableViewController {
                     try self.realm.write {
                         let newData = Items()
                         newData.title = textField.text!
+                        newData.dateCreated = Date()
                         currentCategory.items.append(newData)
                     }
                 }catch {
@@ -223,13 +224,17 @@ extension TodoListViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
+       // <-- Core data search bar implementation -->
+       /*
         let request: NSFetchRequest<ItemList> = ItemList.fetchRequest()
-        
         let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
-        
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        loadItem(with: request, predicate: predicate)
+        */
         
-        //loadItem(with: request, predicate: predicate)
+       // <-- Realm search bar implementation -->
+        itemArray = itemArray?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+        tableView.reloadData()
 
     }
     
