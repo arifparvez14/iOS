@@ -18,6 +18,7 @@ class TodoListViewController: SwipeTableViewController {
     var itemArray: Results<Items>?
     let realm = try! Realm()
     
+    @IBOutlet var searchBar: UISearchBar!
     // <-- Load categories for core data -->
     /*
     var selectedCategory: Categories? {
@@ -43,6 +44,25 @@ class TodoListViewController: SwipeTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        title = selectedCategory!.name
+        
+        
+        if let colourHex = selectedCategory?.colour {
+            guard let navBar = navigationController?.navigationBar else {fatalError("Navigation controller does not exist")}
+            
+            if let navBarColour = UIColor(hexString: colourHex) {
+                
+                navBar.barTintColor = UIColor(hexString: colourHex)
+                
+                navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
+                           
+                searchBar.barTintColor = UIColor(hexString: colourHex)
+            }
+        }
     }
 
     // MARK: - Table view data source

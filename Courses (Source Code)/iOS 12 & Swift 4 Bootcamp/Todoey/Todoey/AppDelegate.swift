@@ -24,8 +24,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print("Error installing new realm, \(error)")
         }
-        
+        setNavBar()
         return true
+    }
+    
+    func setNavBar() {
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .purple
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            
+            UINavigationBar.appearance().tintColor = .white
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().compactAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        } else {
+            UINavigationBar.appearance().tintColor = .purple
+            UINavigationBar.appearance().barTintColor = .purple
+            UINavigationBar.appearance().isTranslucent = false
+        }
     }
 
     // MARK: UISceneSession Lifecycle
