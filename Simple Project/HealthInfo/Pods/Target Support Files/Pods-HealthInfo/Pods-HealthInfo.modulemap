@@ -1,0 +1,6 @@
+framework module Pods_HealthInfo {
+  umbrella header "Pods-HealthInfo-umbrella.h"
+
+  export *
+  module * { export * }
+}
