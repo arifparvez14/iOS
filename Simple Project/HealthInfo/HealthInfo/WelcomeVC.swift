@@ -17,6 +17,7 @@ class WelcomeVC: UIViewController {
         sessionTF.layer.borderWidth = 1
         sessionTF.layer.borderColor = UIColor(red: 255, green: 233, blue: 0, alpha: 1).cgColor
         goBtn.layer.cornerRadius = 5
+        sessionTF.isHidden = true
     }
     
     @IBAction func goBtnTapped(_ sender: Any) {

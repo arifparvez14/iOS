@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 import CoreMotion
+import Alamofire
+
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -42,10 +44,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var stepsCountUpdateInterval: TimeInterval = 60
     
     var steps: Int = 0
-    var calories: Float = 0
-    var duration: Float = 0
-    var distance: Float = 0
-
+    var totalCalories: Float = 0
+    var totalDuration: Float = 0
+    var totalDistance: Float = 0
+    var workoutDate: String = ""
+    
+    var lat = ""
+    var lon = ""
+    var saveWorkoutDataParameters = [String:AnyObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLocationFunctionlity()
@@ -64,17 +71,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.startUpdatingLocation()
+        
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        print(myLocation)
+        //print(myLocation)
+        
         self.latitute.text = "Latitute:  \(myLocation.latitude)"
         self.longitute.text = "Longitute:  \(myLocation.longitude)"
+        
+        lat = "\(myLocation.latitude)"
+        lon = "\(myLocation.longitude)"
+        //print("Lat:",lat," Lon:", lon)
     }
     
     //Pedometer related functions
+    func setDate() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myStringafd = formatter.string(from: Date())
+        workoutDate = myStringafd
+        return workoutDate
+    }
     @objc private func didTapStartButton() {
         shouldStartUpdating = !shouldStartUpdating
         shouldStartUpdating ? (onStart()) : (onStop())
@@ -86,7 +107,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         checkAuthorizationStatus()
         startUpdating()
     }
-
+    
     private func onStop() {
         startButton.setTitle("Start Pedometer", for: .normal)
         startDate = nil
@@ -109,7 +130,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             activityTypeLabel.text = "Not available"
         }
-
+        
         if CMPedometer.isStepCountingAvailable() {
             startCountingSteps()
         } else {
@@ -149,10 +170,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if stepsend.count == 1 {
                     let params = self?.getCaloriesDistanceDurationFromSteps(steps: pedometerData.numberOfSteps.intValue)
                     self?.setLabels(params: params)
+                    let data = ["steps": pedometerData.numberOfSteps.intValue,"latitude":self?.lat ?? ""    ,"longitude":self?.lon ?? "", "calories":params?.calories ?? 0,"duration":params?.durations ?? 0,"distance":params?.distances ?? 0,"date":self?.setDate() as Any] as [String : Any]
+                    self?.saveWorkoutDataParameters["workouts"] = [data] as AnyObject
+                    self?.sendDataToServer()
+                    
                 } else {
                     let steps = abs(stepsend[stepsend.count - 2] - stepsend[stepsend.count - 1])
                     let params = self?.getCaloriesDistanceDurationFromSteps(steps: steps)
                     self?.setLabels(params: params)
+                    let data = ["steps": steps,"latitude":self?.lat ?? "" ,"longitude":self?.lon ?? "", "calories":params?.calories ?? 0,"duration":params?.durations ?? 0,"distance":params?.distances ?? 0,"date":self?.setDate() as Any] as [String : Any]
+                    self?.saveWorkoutDataParameters["workouts"] = [data] as AnyObject
+                    self?.sendDataToServer()
                 }
                 
             }
@@ -170,7 +198,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     private func on(error: Error) {
         //handle error
     }
-
+    
     private func updateStepsCountLabelUsing(startDate: Date) {
         pedometer.queryPedometerData(from: startDate, to: Date()) {
             [weak self] pedometerData, error in
@@ -191,9 +219,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let coveredCal = coveredKM * Float(averageCal)
         
         let tempAvgDuration = averageDuration * 60
-        print(tempAvgDuration * steps)
-        print()
-        print(averageSteps)
         let dutation = Float((tempAvgDuration * steps))/Float(averageSteps)
         
         return (coveredCal, Float(coveredKM*1000), dutation)
@@ -209,9 +234,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func setLabels(params: (calories: Float, distances: Float, durations: Float)?){
         DispatchQueue.main.async {
-            self.timeLabel.text = "\(params?.0 ?? 0) s"
-            self.distanceLabel.text = "\(params?.1 ?? 0) m"
-            self.caloriesLabel.text = "\(params?.2 ?? 0) c"
+            self.totalCalories = self.totalCalories + (params?.0 ?? 0)
+            self.totalDistance = self.totalDistance + (params?.1 ?? 0)
+            self.totalDuration = self.totalDuration + (params?.2 ?? 0)
+            
+            self.timeLabel.text = "\(self.totalDuration) s"
+            self.distanceLabel.text = "\(self.totalDistance) m"
+            self.caloriesLabel.text = "\(self.totalCalories) c"
         }
     }
     
@@ -219,6 +248,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func sendDataToServer() {
+        
+        let endPoint = "http://dev1.geobit.siliconorchard.com/api/save_workout_data"
+        print(saveWorkoutDataParameters);
+        var headers = HTTPHeaders()
+        headers["X-BITCOIN-SESSIONID"] = "YToyOntzOjEwOiJzZXNzaW9uX2lkIjtzOjI2OiIzbWNmYzB2YTRuNXFtMWdjNnYwZWdlaTUwcCI7czo3OiJ1c2VyX2lkIjtzOjM6IjQ4NyI7fQ=="
+        
+        Alamofire.request(endPoint, method: .post, parameters: saveWorkoutDataParameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            print(response.response?.statusCode as Any)
+            print(response)
+        }
+    }
 }
+
 
 
