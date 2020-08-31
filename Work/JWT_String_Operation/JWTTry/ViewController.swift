@@ -74,6 +74,7 @@ class ViewController: UIViewController {
 
         let decoded = decoder(jwtToken: info)
         let decoderString = decoded["data"] as! String
+        print(decoderString)
 
 
         if let list = self.convertToArrayOfDictionary(text: decoderString) as? [AnyObject] {
