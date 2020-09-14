@@ -24,6 +24,7 @@ struct ContentView: View {
                 Image(systemName: "3.circle")
                 Image(systemName: "4.circle")
                 Image(systemName: "5.circle")
+                Image(systemName: "6.circle")
             }.border(Color.green)
         }
     }
