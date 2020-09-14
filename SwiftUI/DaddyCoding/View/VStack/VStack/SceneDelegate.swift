@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Memorize
+//  VStack
 //
-//  Created by Sharetrip-iOS on 06/09/2020.
+//  Created by Sharetrip-iOS on 14/09/2020.
 //  Copyright © 2020 AP. All rights reserved.
 //
 
