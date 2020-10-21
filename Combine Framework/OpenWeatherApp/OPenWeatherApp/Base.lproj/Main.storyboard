@@ -34,8 +34,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFD-61-EU9">
-                                <rect key="frame" x="36" y="548" width="362" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFD-61-EU9">
+                                <rect key="frame" x="52" y="733" width="362" height="30"/>
                                 <state key="normal" title="Get Data"/>
                                 <connections>
                                     <action selector="getData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KNF-Ny-dIP"/>
