@@ -90,11 +90,3 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-#Vapor
-Packages
-.build
-.DS_Store
-*.xcodeproj
-DerivedData/
-Package.resolved
-.swiftpm
