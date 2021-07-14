@@ -1,0 +1,6 @@
+framework module Pods_LottiExample {
+  umbrella header "Pods-LottiExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

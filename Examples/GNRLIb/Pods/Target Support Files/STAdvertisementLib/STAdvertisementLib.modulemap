@@ -1,0 +1,6 @@
+framework module STAdvertisementLib {
+  umbrella header "STAdvertisementLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

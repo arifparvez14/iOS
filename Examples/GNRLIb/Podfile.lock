@@ -1,0 +1,22 @@
+PODS:
+  - STAdvertisementLib (0.0.4)
+
+DEPENDENCIES:
+  - STAdvertisementLib (from `https://github.com/arifparvez14/STAdvertisementLib.git`, tag `0.0.6`)
+
+EXTERNAL SOURCES:
+  STAdvertisementLib:
+    :git: https://github.com/arifparvez14/STAdvertisementLib.git
+    :tag: 0.0.6
+
+CHECKOUT OPTIONS:
+  STAdvertisementLib:
+    :git: https://github.com/arifparvez14/STAdvertisementLib.git
+    :tag: 0.0.6
+
+SPEC CHECKSUMS:
+  STAdvertisementLib: 963bee9dc8403a37176567f258ca5546715eb219
+
+PODFILE CHECKSUM: d22838e368260a0e84d97bf1af7bab6a1f645187
+
+COCOAPODS: 1.8.4
