@@ -9,7 +9,6 @@ import UIKit
 import Lottie
 
 
-
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -34,7 +33,7 @@ class LottiLoader {
         let animation = Animation.named("Loader")
         animationView = AnimationView(animation: animation)
         animationView?.frame = CGRect(x: UIScreen.main.bounds.width / 2 - (width / 2), y: UIScreen.main.bounds.height / 2 - (height / 2), width: width, height: height)
-        //animationView?.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
+        animationView?.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
         animationView?.layer.cornerRadius = 10.0
         onView.addSubview(animationView!)
     }

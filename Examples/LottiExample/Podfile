@@ -7,5 +7,6 @@ target 'LottiExample' do
 
   # Pods for LottiExample
    pod 'lottie-ios'
+   pod 'PKHUD'
 
 end
