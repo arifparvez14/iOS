@@ -7,17 +7,19 @@
 
 import UIKit
 import WebKit
+import CoreTelephony
+import Network
+import AuthenticationServices
 
 public protocol GNRADFullScreenContentDelegate: class{
     func adDidDismissFullScreenContent()
 }
 
-public class GNRInterstitialAd: UIViewController, WKNavigationDelegate {
+public class GNRInterstitialAd: UIViewController {
 
     private let viewModel = AddViewModel(service: AddService())
     public var htmlStr = String()
     public typealias CompletionCallBack = (_ success: Bool?, _ error: String?) -> Void
-    var callbackClosure: ((Bool) -> Void)?
     public weak var delegate: GNRADFullScreenContentDelegate?
     
     private lazy var containerView: UIView = {
@@ -36,8 +38,6 @@ public class GNRInterstitialAd: UIViewController, WKNavigationDelegate {
         return webView
     }()
     
-    
-    
     private lazy var closeButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -48,11 +48,24 @@ public class GNRInterstitialAd: UIViewController, WKNavigationDelegate {
         return button
     }()
     
+    var carrierName:String {
+        CTTelephonyNetworkInfo().serviceSubscriberCellularProviders?.first?.value.carrierName ?? "Wifi"
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.webView.loadHTMLString(self.htmlStr, baseURL: nil)
         webView.navigationDelegate = self
         setupView()
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        getDeviceIdentifierInfo()
+        checkCarrearName()
+        checkDeviceName()
+        checkInternetConnection()
+        checkVersion()
+        handleAppleIdRequest()
     }
     
     private func setupView() {
@@ -82,7 +95,6 @@ public class GNRInterstitialAd: UIViewController, WKNavigationDelegate {
         delegate?.adDidDismissFullScreenContent()
     }
     
-    
     //Load Ad
     public func load(onCompletion: @escaping CompletionCallBack)  {
         viewModel.loadData() { [weak self] (success, err)  in
@@ -96,7 +108,10 @@ public class GNRInterstitialAd: UIViewController, WKNavigationDelegate {
             }
         }
     }
-    
+}
+
+//MARK:- WKNavigationDelegate Delegate
+extension GNRInterstitialAd: WKNavigationDelegate {
     private func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("------------ Web View didn't Loaded ------------")
     }
@@ -105,4 +120,99 @@ public class GNRInterstitialAd: UIViewController, WKNavigationDelegate {
        print("------------ Web View Loaded ------------")
     }
 }
+
+//MARK:- Apple info {
+extension GNRInterstitialAd {
+    private func handleAppleIdRequest(){
+        if #available(iOS 13.0, *) {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.presentationContextProvider = self
+            authorizationController.performRequests()
+        }
+    }
+}
+
+//MARK:- Apple info
+extension GNRInterstitialAd: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    @available(iOS 13.0, *)
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            let identityToken = appleIDCredential.identityToken
+            let identityTokenStr = String(decoding: identityToken ?? Data(), as: UTF8.self)
+            
+            print(identityTokenStr)
+            
+        case let passwordCredential as ASPasswordCredential:
+            let userName = passwordCredential.user
+            let password = passwordCredential.password
+            print(userName)
+            print(password)
+
+        default:
+            break
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    public func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+}
+
+//MARK:- Check additional info
+extension GNRInterstitialAd {
+    private func getDeviceIdentifierInfo() {
+        print(UIDevice.current.identifierForVendor)
+        print(UIDevice.current.name)
+        print(UIDevice.current.model)
+        print(UIDevice.current.systemName)
+        print(UIDevice.current.systemVersion)
+        print(UIDevice.current.localizedModel)
+        print(UIDevice.current.proximityState)
+        print(UIDevice.current.batteryLevel)
+        print(UIDevice.current.batteryState)
+        print(UIDevice.current.userInterfaceIdiom)
+        
+    }
+    private func checkCarrearName() {
+        print(carrierName)
+    }
+    private func checkDeviceName() {
+        print(UIDevice.modelName)
+    }
+    
+    private func checkVersion() {
+        let os = ProcessInfo().operatingSystemVersion
+        print(os.majorVersion)
+        print(os.minorVersion)
+        print(os.patchVersion)
+        print(os.getFullVersion())
+    }
+    
+    private func checkInternetConnection() {
+        let nwPathMonitor = NWPathMonitor()
+        nwPathMonitor.pathUpdateHandler = { path in
+
+            if path.usesInterfaceType(.wifi) {
+                print("Path is Wi-Fi")
+            } else if path.usesInterfaceType(.cellular) {
+                    print("Path is Cellular")
+            } else if path.usesInterfaceType(.wiredEthernet) {
+                    print("Path is Wired Ethernet")
+            } else if path.usesInterfaceType(.loopback) {
+                    print("Path is Loopback")
+            } else if path.usesInterfaceType(.other) {
+                    print("Path is other")
+            }
+        }
+        nwPathMonitor.start(queue: .main)
+    }
+}
+
+
 

@@ -11,6 +11,7 @@
 		17002DFF2695771B0088A8BB /* ADVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17002DFD2695771B0088A8BB /* ADVC.swift */; };
 		17002E002695771B0088A8BB /* ADVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17002DFE2695771B0088A8BB /* ADVC.xib */; };
 		171AE82626AEA215006C55F9 /* GNRInterstitialAdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171AE82526AEA215006C55F9 /* GNRInterstitialAdVC.swift */; };
+		175F387626AFE2090064D9A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F387526AFE2090064D9A3 /* Extensions.swift */; };
 		2436E254A8F5DEBEE989AFEA7E8A96CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		33B5261AA1D9E1435AB16BD9F206D036 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675E56FACCDC0277F3BCCFFDAB2EE1FA /* Utils.swift */; };
 		5B8B11F737ECE1A8D12AD05A8E5567D2 /* AddResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD83263419243D1AE334F480259266E /* AddResponseModel.swift */; };
@@ -46,6 +47,7 @@
 		17002DFD2695771B0088A8BB /* ADVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADVC.swift; sourceTree = "<group>"; };
 		17002DFE2695771B0088A8BB /* ADVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADVC.xib; sourceTree = "<group>"; };
 		171AE82526AEA215006C55F9 /* GNRInterstitialAdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNRInterstitialAdVC.swift; sourceTree = "<group>"; };
+		175F387526AFE2090064D9A3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		19F66A9A354E14A2B99D040C28A1ABAD /* Pods_GNRLIb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GNRLIb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3829CDE2194B2982BF1535BB247BFC /* Pods-GNRLIb-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GNRLIb-acknowledgements.plist"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -138,6 +140,7 @@
 				17002DFD2695771B0088A8BB /* ADVC.swift */,
 				17002DFE2695771B0088A8BB /* ADVC.xib */,
 				171AE82526AEA215006C55F9 /* GNRInterstitialAdVC.swift */,
+				175F387526AFE2090064D9A3 /* Extensions.swift */,
 			);
 			path = STAdvertisementLib;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				17002DFF2695771B0088A8BB /* ADVC.swift in Sources */,
 				B4946DFBD6EA296E476A1F15707A4512 /* AddView.swift in Sources */,
 				AE67FA9CA88C91A8CD6B010209BC9D7A /* AddView.xib in Sources */,
+				175F387626AFE2090064D9A3 /* Extensions.swift in Sources */,
 				A6872F7295202C93222F616AEC7A3F01 /* AddViewModel.swift in Sources */,
 				7B43E18CF1CF9563E1F0D2145AB4EF51 /* InterstitialAddView.swift in Sources */,
 				894395CC2D6C43C6CCB43E9198766F69 /* STAdvertisementLib-dummy.m in Sources */,

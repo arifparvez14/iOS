@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		1760960A26945D4200DA5720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1760960D26945D4200DA5720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1760960F26945D4200DA5720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D69A2626B00131006EEEA8 /* GNRLIb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GNRLIb.entitlements; sourceTree = "<group>"; };
 		4DD853787C1379CAAB8606C6 /* Pods_GNRLIb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GNRLIb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2ED2259979D46DB69F429B4 /* Pods-GNRLIb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNRLIb.debug.xcconfig"; path = "Target Support Files/Pods-GNRLIb/Pods-GNRLIb.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +49,6 @@
 				C2ED2259979D46DB69F429B4 /* Pods-GNRLIb.debug.xcconfig */,
 				0799C7F4D456B25A7151F0FD /* Pods-GNRLIb.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,6 +73,7 @@
 		1760960026945D4000DA5720 /* GNRLIb */ = {
 			isa = PBXGroup;
 			children = (
+				17D69A2626B00131006EEEA8 /* GNRLIb.entitlements */,
 				1760960126945D4000DA5720 /* AppDelegate.swift */,
 				1760960326945D4000DA5720 /* SceneDelegate.swift */,
 				1760960526945D4000DA5720 /* ViewController.swift */,
@@ -356,6 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GNRLIb/GNRLIb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GNRLIb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -375,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GNRLIb/GNRLIb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GNRLIb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
