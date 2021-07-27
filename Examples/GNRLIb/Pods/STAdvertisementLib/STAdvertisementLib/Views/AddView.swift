@@ -7,11 +7,6 @@
 
 import UIKit
 
-public protocol AddViewProtocol {
-//    func didCloseAD() {
-//        
-//    }
-}
 
 public class AddView: UIView {
     private let viewModel = AddViewModel(service: AddService())
@@ -29,15 +24,24 @@ public class AddView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        commonInit(onView: nil)
     }
-    
+
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
+        commonInit(onView: nil)
     }
     
-    func commonInit() {
+    init(onView: UIView) {
+        super.init(frame: .zero)
+        commonInit(onView: onView)
+        
+    }
+    
+    func commonInit(onView: UIView?) {
+        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        onView?.addSubview(self)
+        
         guard let containerView = self.loadNib(name: "AddView") else {return}
         containerView.frame = self.bounds
         self.addSubview(containerView)
