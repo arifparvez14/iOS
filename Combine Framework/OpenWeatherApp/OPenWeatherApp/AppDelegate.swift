@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  OPenWeatherApp
+//  OpenWeatherApp
 //
-//  Created by Sharetrip-iOS on 28/09/2020.
+//  Created by ShareTrip iOS on 26/8/21.
 //
 
 import UIKit
