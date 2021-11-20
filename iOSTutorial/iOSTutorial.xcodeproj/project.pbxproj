@@ -10,6 +10,8 @@
 		6DF5EBEB4BA1D4C1A7C18CDD /* Pods_iOSTutorialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B6F94D057D93BC2F35BDA /* Pods_iOSTutorialTests.framework */; };
 		788676C61DA6219366076BF1 /* Pods_iOSTutorial_iOSTutorialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC0718DDAEFB3A9B3D58A80 /* Pods_iOSTutorial_iOSTutorialUITests.framework */; };
 		891BC16F273F0456009B8DF7 /* AudioRecorderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891BC16E273F0456009B8DF7 /* AudioRecorderVC.swift */; };
+		8929D00A27493C6100058408 /* PanGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8929D00927493C6100058408 /* PanGestureVC.swift */; };
+		8929D00D27494BFD00058408 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8929D00C27494BFD00058408 /* .swiftlint.yml */; };
 		8947F99B273D29130047C88C /* SQLightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947F99A273D29130047C88C /* SQLightVC.swift */; };
 		8947F99F273D36580047C88C /* SQLiteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947F99E273D36580047C88C /* SQLiteDataStore.swift */; };
 		8947F9A1273D36BD0047C88C /* BaseDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947F9A0273D36BD0047C88C /* BaseDBModel.swift */; };
@@ -65,6 +67,8 @@
 		66218854C54AD53BC75D3D55 /* Pods-iOSTutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTutorial.debug.xcconfig"; path = "Target Support Files/Pods-iOSTutorial/Pods-iOSTutorial.debug.xcconfig"; sourceTree = "<group>"; };
 		7C0F86DB98CF5BF03A1426F1 /* Pods-iOSTutorial-iOSTutorialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTutorial-iOSTutorialUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSTutorial-iOSTutorialUITests/Pods-iOSTutorial-iOSTutorialUITests.release.xcconfig"; sourceTree = "<group>"; };
 		891BC16E273F0456009B8DF7 /* AudioRecorderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderVC.swift; sourceTree = "<group>"; };
+		8929D00927493C6100058408 /* PanGestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureVC.swift; sourceTree = "<group>"; };
+		8929D00C27494BFD00058408 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8947F99A273D29130047C88C /* SQLightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLightVC.swift; sourceTree = "<group>"; };
 		8947F99E273D36580047C88C /* SQLiteDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDataStore.swift; sourceTree = "<group>"; };
 		8947F9A0273D36BD0047C88C /* BaseDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDBModel.swift; sourceTree = "<group>"; };
@@ -167,6 +171,14 @@
 			path = CircularAnimation;
 			sourceTree = "<group>";
 		};
+		8929D0082749355600058408 /* PanGesture */ = {
+			isa = PBXGroup;
+			children = (
+				8929D00927493C6100058408 /* PanGestureVC.swift */,
+			);
+			path = PanGesture;
+			sourceTree = "<group>";
+		};
 		8947F995273D25CD0047C88C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +234,7 @@
 				891BC16D273F0429009B8DF7 /* AudioRecorder */,
 				89F1185127423C820010FA86 /* TTSDemo */,
 				89F1185B2742A5E30010FA86 /* BottomCard */,
+				8929D0082749355600058408 /* PanGesture */,
 			);
 			path = Tutorials;
 			sourceTree = "<group>";
@@ -243,6 +256,7 @@
 		89E3A2CC273D06F3008ED573 = {
 			isa = PBXGroup;
 			children = (
+				8929D00C27494BFD00058408 /* .swiftlint.yml */,
 				89E3A2D7273D06F4008ED573 /* iOSTutorial */,
 				89E3A2EE273D06F6008ED573 /* iOSTutorialTests */,
 				89E3A2F8273D06F6008ED573 /* iOSTutorialUITests */,
@@ -342,6 +356,7 @@
 			buildConfigurationList = 89E3A2FF273D06F6008ED573 /* Build configuration list for PBXNativeTarget "iOSTutorial" */;
 			buildPhases = (
 				9B7C3C05B32B3770E8B71181 /* [CP] Check Pods Manifest.lock */,
+				8929D00B2749481100058408 /* Run SwiftLint */,
 				89E3A2D1273D06F4008ED573 /* Sources */,
 				89E3A2D2273D06F4008ED573 /* Frameworks */,
 				89E3A2D3273D06F4008ED573 /* Resources */,
@@ -443,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8929D00D27494BFD00058408 /* .swiftlint.yml in Resources */,
 				89E3A30F273D08FE008ED573 /* ItemTVCell.xib in Resources */,
 				89F1185627423CC60010FA86 /* resv_1.8.1.html in Resources */,
 				89E3A2E5273D06F5008ED573 /* LaunchScreen.storyboard in Resources */,
@@ -486,6 +502,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSTutorial-iOSTutorialUITests/Pods-iOSTutorial-iOSTutorialUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8929D00B2749481100058408 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		9B7C3C05B32B3770E8B71181 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -597,6 +631,7 @@
 				89E3A309273D0783008ED573 /* Helper.swift in Sources */,
 				89F1185D2742A6370010FA86 /* BottomCardVC.swift in Sources */,
 				8947F99B273D29130047C88C /* SQLightVC.swift in Sources */,
+				8929D00A27493C6100058408 /* PanGestureVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

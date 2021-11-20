@@ -2,12 +2,10 @@
 //  iOSTutorialUITestsLaunchTests.swift
 //  iOSTutorialUITests
 //
-//  Created by BJIT on 11/11/21.
-//
 
 import XCTest
 
-class iOSTutorialUITestsLaunchTests: XCTestCase {
+class IOSTutorialUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

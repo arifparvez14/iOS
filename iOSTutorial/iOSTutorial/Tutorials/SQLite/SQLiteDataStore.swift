@@ -14,7 +14,7 @@ class SQLiteDataStore {
             .documentDirectory, .userDomainMask, true
         ).first!
 
-        let dbPath = ("\(documentDirectory)/\(DataBaseConstant.DATABASE_NAME)")
+        let dbPath = ("\(documentDirectory)/\(DataBaseConstant.databaseName)")
         print("DataBase path: \(dbPath)")
         do {
             dataBaseConnection = try Connection(dbPath)
@@ -23,11 +23,11 @@ class SQLiteDataStore {
         }
     }
 
-    func createTables() throws{
+    func createTables() throws {
         do {
             try StudentDBModel().createTable()
         } catch {
-            throw DataAccessError.Datastore_Connection_Error
+            throw DataAccessError.datastoreConnectionError
         }
     }
 }

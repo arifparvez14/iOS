@@ -2,8 +2,6 @@
 //  SQLightVC.swift
 //  iOSTutorial
 //
-//  Created by BJIT on 11/11/21.
-//
 
 import UIKit
 import SQLite
@@ -28,8 +26,8 @@ class SQLightVC: UIViewController {
         setupSQLiteDB()
         fetch()
         
-        //crash on delete
-        //deleteRow()
+        // crash on delete
+        // deleteRow()
     }
     
     private func setupUI() {
@@ -84,25 +82,15 @@ class SQLightVC: UIViewController {
             maleOrFemale: 1)
         
         do {
-            let row: Void = try StudentDBModel.init().updateUsingRow(item: entity, idToCompare: 0)
+            let _: Void = try StudentDBModel.init().updateUsingRow(item: entity, idToCompare: 0)
             print("Updated")
         } catch _ {}
     }
     
     private func deleteRow() {
         do {
-            let _ = try StudentDBModel.init().deleteUsingRow(id: 0)
+            _ = try StudentDBModel.init().deleteUsingRow(id: 0)
             print("Deleted")
         } catch _ {}
     }
 }
-
-
-
-
-
-
-
-
-
-

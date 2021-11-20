@@ -2,8 +2,6 @@
 //  TTSVC.swift
 //  iOSTutorial
 //
-//  Created by BJIT on 15/11/21.
-//
 
 import UIKit
 
@@ -12,8 +10,8 @@ class TTSVC: UIViewController {
     @IBOutlet weak var playTTSBtn: UIButton!
     var viewTitle: String!
     private let ttsResponsiveView = TTSResponsiveView()
-    private var voice : String = ""
-    private var rate : String = "1.0"
+    private var voice: String = ""
+    private var rate: String = "1.0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +28,11 @@ class TTSVC: UIViewController {
         playTTS()
     }
     
-    private func stopTTS(){
+    private func stopTTS() {
         ttsResponsiveView.stopTTS()
     }
     
-    private func playTTS(){
+    private func playTTS() {
         stopTTS()
         proceedAndPlayTTS()
     }
@@ -46,9 +44,8 @@ class TTSVC: UIViewController {
     }
 }
 
-extension TTSVC: TTSResponsiveViewDelegate{
+extension TTSVC: TTSResponsiveViewDelegate {
     func speakingStatusChanged(isSpeaking: Bool) {}
     func onReady() {}
     func onVoiceEnd() {}
 }
-

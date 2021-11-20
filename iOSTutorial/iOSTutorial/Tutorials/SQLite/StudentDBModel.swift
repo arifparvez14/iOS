@@ -6,8 +6,7 @@
 import SQLite
 
 class StudentDBModel: BaseDBModel {
-    
-    let TABLE_NAME = "StudentTable"
+    let tableName = "StudentTable"
     let name: Expression<String>
     let stdId: Expression<String>
     let department: Expression<String>
@@ -20,18 +19,18 @@ class StudentDBModel: BaseDBModel {
         self.department = Expression<String>("department")
         self.hallName = Expression<String>("hall_name")
         self.maleOrFemale = Expression<Int64>("sex")
-        super.init(id: Expression<Int64>("id"), table: Table(TABLE_NAME))
+        super.init(id: Expression<Int64>("id"), table: Table(tableName))
     }
     
-    func createTable() throws -> Void {
+    func createTable() throws {
         do {
-            let createTableQueryString = table.create(ifNotExists: true) {t in
-                t.column(id, primaryKey: .autoincrement)
-                t.column(name)
-                t.column(stdId)
-                t.column(department)
-                t.column(hallName)
-                t.column(maleOrFemale)
+            let createTableQueryString = table.create(ifNotExists: true) {table in
+                table.column(id, primaryKey: .autoincrement)
+                table.column(name)
+                table.column(stdId)
+                table.column(department)
+                table.column(hallName)
+                table.column(maleOrFemale)
             }
             
             try createTable(queryString: createTableQueryString)
@@ -70,12 +69,10 @@ class StudentDBModel: BaseDBModel {
             guard let rowId = try? insert(queryString: insertStatement) else { return -1 }
             return rowId
         }
-        throw DataAccessError.Nil_In_Data
+        throw DataAccessError.nilInData
     }
     
-    
-    
-    func update(item: BaseEntity) throws -> Void {
+    func update(item: BaseEntity) throws {
         guard let studentTableModel = item as? StudentEntity else {
             return
         }
@@ -92,12 +89,12 @@ class StudentDBModel: BaseDBModel {
                 try update(queryUpdate: updateQuery)
 
             } catch _ {
-                throw DataAccessError.Update_Error
+                throw DataAccessError.updateError
             }
         }
     }
     
-    func updateUsingRow(item: BaseEntity, idToCompare: Int64) throws -> Void {
+    func updateUsingRow(item: BaseEntity, idToCompare: Int64) throws {
         guard let studentTableModel = item as? StudentEntity else {
             return
         }
@@ -107,7 +104,7 @@ class StudentDBModel: BaseDBModel {
             let updateQuery = query.update(name <- studentTableModel.name!, stdId <- studentTableModel.stdId!, hallName <- studentTableModel.hallName!)
             try update(queryUpdate: updateQuery)
         } catch _ {
-            throw DataAccessError.Update_Error
+            throw DataAccessError.updateError
         }
     }
     
@@ -115,7 +112,7 @@ class StudentDBModel: BaseDBModel {
         do {
             try delete(idToDelte: id)
         } catch _ {
-            throw DataAccessError.Delete_Error
+            throw DataAccessError.deleteError
         }
     }
 }

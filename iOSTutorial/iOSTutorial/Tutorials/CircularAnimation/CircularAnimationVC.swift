@@ -2,8 +2,6 @@
 //  CircularAnimationVC.swift
 //  iOSTutorial
 //
-//  Created by BJIT on 12/11/21.
-//
 
 import UIKit
 
@@ -18,7 +16,7 @@ class CircularAnimationVC: UIViewController {
         addAnimation()
     }
     
-    func addAnimation(){
+    func addAnimation() {
         let center = view.center
         
         // create my track layer

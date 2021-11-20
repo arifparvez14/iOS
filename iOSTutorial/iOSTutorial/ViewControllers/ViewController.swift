@@ -3,7 +3,6 @@
 //  iOSTutorial
 //
 
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -26,10 +25,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTVCell", for: indexPath) as! ItemTVCell
-        cell.itemNameLabel.text = Helper.getTopicName(indexPath.row)
-        cell.selectionStyle = .none
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTVCell", for: indexPath) as? ItemTVCell
+        cell?.itemNameLabel.text = Helper.getTopicName(indexPath.row)
+        cell?.selectionStyle = .none
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -40,4 +39,3 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 70
     }
 }
-

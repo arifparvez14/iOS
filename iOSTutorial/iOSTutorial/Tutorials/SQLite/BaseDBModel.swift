@@ -15,90 +15,87 @@ class BaseDBModel {
         self.id = id
     }
 
-    func createTable(queryString: String) throws -> Void {
-        guard let DB = SQLiteDataStore.sharedInstance.dataBaseConnection else {
-            throw DataAccessError.Datastore_Connection_Error
+    func createTable(queryString: String) throws {
+        guard let database = SQLiteDataStore.sharedInstance.dataBaseConnection else {
+            throw DataAccessError.datastoreConnectionError
         }
         do {
-            _ = try DB.run(queryString)
+            _ = try database.run(queryString)
         } catch let error {
             print(error.localizedDescription)
         }
     }
 
     func insert(queryString: Insert) throws -> Int64 {
-        guard let DB = SQLiteDataStore.sharedInstance.dataBaseConnection else {
-            throw DataAccessError.Datastore_Connection_Error
+        guard let database = SQLiteDataStore.sharedInstance.dataBaseConnection else {
+            throw DataAccessError.datastoreConnectionError
         }
         do {
-            let rowId = try DB.run(queryString)
+            let rowId = try database.run(queryString)
             guard rowId >= 0 else {
-                throw DataAccessError.Insert_Error
+                throw DataAccessError.insertError
             }
             return rowId
         } catch _ {
-            throw DataAccessError.Insert_Error
+            throw DataAccessError.deleteError
         }
     }
 
-    func update(queryUpdate: Update) throws -> Void {
-        guard let DB = SQLiteDataStore.sharedInstance.dataBaseConnection else {
-            throw DataAccessError.Datastore_Connection_Error
+    func update(queryUpdate: Update) throws {
+        guard let database = SQLiteDataStore.sharedInstance.dataBaseConnection else {
+            throw DataAccessError.datastoreConnectionError
         }
 
         do {
-            try DB.run(queryUpdate)
+            try database.run(queryUpdate)
         } catch _ {
-            throw DataAccessError.Update_Error
+            throw DataAccessError.updateError
         }
     }
 
     func find(findId: Int64) throws -> AnySequence<Row> {
-        guard let DB = SQLiteDataStore.sharedInstance.dataBaseConnection else {
-            throw DataAccessError.Datastore_Connection_Error
+        guard let database = SQLiteDataStore.sharedInstance.dataBaseConnection else {
+            throw DataAccessError.datastoreConnectionError
         }
         let query = table.filter(self.id == findId)
-        return try DB.prepare(query)
+        return try database.prepare(query)
     }
 
     func find(filter: SchemaType) throws -> AnySequence<Row> {
-        guard let DB = SQLiteDataStore.sharedInstance.dataBaseConnection else {
-            throw DataAccessError.Datastore_Connection_Error
+        guard let database = SQLiteDataStore.sharedInstance.dataBaseConnection else {
+            throw DataAccessError.datastoreConnectionError
         }
-        return try DB.prepare(filter)
+        return try database.prepare(filter)
     }
-
 
     func findAll() throws -> AnySequence<Row> {
-        guard let DB = SQLiteDataStore.sharedInstance.dataBaseConnection else {
-            throw DataAccessError.Datastore_Connection_Error
+        guard let database = SQLiteDataStore.sharedInstance.dataBaseConnection else {
+            throw DataAccessError.datastoreConnectionError
         }
 
-        return try DB.prepare(table)
+        return try database.prepare(table)
     }
 
-
     func delete(idToDelte: Int64) throws {
-        guard let DB = SQLiteDataStore.sharedInstance.dataBaseConnection else {
-            throw DataAccessError.Datastore_Connection_Error
+        guard let database = SQLiteDataStore.sharedInstance.dataBaseConnection else {
+            throw DataAccessError.datastoreConnectionError
         }
 
         let query = table.filter(id == idToDelte)
         do {
-            try DB.run(query.delete())
+            try database.run(query.delete())
         } catch _ {
 
         }
     }
 
-
     func deleteAll() throws {
-        guard let DB = SQLiteDataStore.sharedInstance.dataBaseConnection else {
-            throw DataAccessError.Datastore_Connection_Error
+        guard let database = SQLiteDataStore.sharedInstance.dataBaseConnection else {
+            throw DataAccessError.datastoreConnectionError
         }
 
         do {
-            try DB.run(table.delete())
+            try database.run(table.delete())
         } catch _ {
 
         }

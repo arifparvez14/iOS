@@ -2,13 +2,11 @@
 //  AudioRecorderVC.swift
 //  iOSTutorial
 //
-//  Created by BJIT on 13/11/21.
-//
 
 import UIKit
 import AVFoundation
 
-class AudioRecorderVC: UIViewController,  AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class AudioRecorderVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
@@ -16,13 +14,12 @@ class AudioRecorderVC: UIViewController,  AVAudioRecorderDelegate, AVAudioPlayer
     var viewTitle: String!
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
-    var audioPlayer:AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.navigationItem.title = viewTitle
-        //setup Recorder
         self.setupView()
     }
     
@@ -32,7 +29,7 @@ class AudioRecorderVC: UIViewController,  AVAudioRecorderDelegate, AVAudioPlayer
         do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
             try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
+            recordingSession.requestRecordPermission { [unowned self] allowed in
                 DispatchQueue.main.async {
                     if allowed {
                         self.loadRecordingUI()
@@ -100,7 +97,7 @@ class AudioRecorderVC: UIViewController,  AVAudioRecorderDelegate, AVAudioPlayer
     }
     
     @IBAction func playAudioBtnTapped(_ sender: UIButton) {
-        if (sender.titleLabel?.text == "Play"){
+        if sender.titleLabel?.text == "Play" {
             recordBtn.isEnabled = false
             sender.setTitle("Stop", for: .normal)
             preparePlayer()
@@ -140,8 +137,6 @@ class AudioRecorderVC: UIViewController,  AVAudioRecorderDelegate, AVAudioPlayer
         let path = getDocumentsDirectory().appendingPathComponent("recording.m4a")
         return path as URL
     }
-
-    //MARK: Delegates
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
@@ -161,6 +156,4 @@ class AudioRecorderVC: UIViewController,  AVAudioRecorderDelegate, AVAudioPlayer
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         print("Error while playing audio \(error!.localizedDescription)")
     }
-    
 }
-

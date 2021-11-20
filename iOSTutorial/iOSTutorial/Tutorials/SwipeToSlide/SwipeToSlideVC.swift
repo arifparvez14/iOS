@@ -2,8 +2,6 @@
 //  SwipeToSlideVC.swift
 //  iOSTutorial
 //
-//  Created by BJIT on 12/11/21.
-//
 
 import UIKit
 
@@ -40,8 +38,7 @@ class SwipeToSlideVC: UIViewController {
             
             let translation = sender.translation(in: self.view).x
             
-            if translation > 0 { //swipe right
-                
+            if translation > 0 { // swipe right
                 if sideViewLeadingConstrain.constant < 0 {
                     UIView.animate(withDuration: 0.2) {
                         self.sideViewLeadingConstrain.constant += translation / 20
@@ -49,8 +46,7 @@ class SwipeToSlideVC: UIViewController {
                     }
                 }
                 
-                
-            } else { //swipe left
+            } else { // swipe left
                 
                 if sideViewLeadingConstrain.constant > -175 {
                     UIView.animate(withDuration: 0.2) {
