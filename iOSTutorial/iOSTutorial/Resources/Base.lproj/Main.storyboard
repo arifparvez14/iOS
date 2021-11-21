@@ -232,13 +232,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder_icon" translatesAutoresizingMaskIntoConstraints="NO" id="TLP-MO-pYM">
-                                <rect key="frame" x="40" y="84" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="oEi-x4-q8d"/>
-                                    <constraint firstAttribute="width" secondItem="TLP-MO-pYM" secondAttribute="height" multiplier="1:1" id="sb2-Pa-F7k"/>
-                                </constraints>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete_icon" translatesAutoresizingMaskIntoConstraints="NO" id="avl-NO-7gI">
                                 <rect key="frame" x="294" y="742" width="80" height="80"/>
                                 <constraints>
@@ -250,15 +243,12 @@
                         <viewLayoutGuide key="safeArea" id="GDO-bG-L1C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TLP-MO-pYM" firstAttribute="top" secondItem="GDO-bG-L1C" secondAttribute="top" constant="40" id="b0h-09-wb3"/>
-                            <constraint firstItem="TLP-MO-pYM" firstAttribute="leading" secondItem="GDO-bG-L1C" secondAttribute="leading" constant="40" id="e0o-6Q-xDW"/>
                             <constraint firstItem="GDO-bG-L1C" firstAttribute="bottom" secondItem="avl-NO-7gI" secondAttribute="bottom" constant="40" id="ySn-R3-de9"/>
                             <constraint firstItem="GDO-bG-L1C" firstAttribute="trailing" secondItem="avl-NO-7gI" secondAttribute="trailing" constant="40" id="zHY-Gm-232"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="deleteIV" destination="avl-NO-7gI" id="lwI-aV-zAm"/>
-                        <outlet property="folderIV" destination="TLP-MO-pYM" id="wWa-Hz-lJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEb-7W-sPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -287,7 +277,6 @@
     <resources>
         <image name="Background" width="2848" height="4288"/>
         <image name="delete_icon" width="512" height="512"/>
-        <image name="folder_icon" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

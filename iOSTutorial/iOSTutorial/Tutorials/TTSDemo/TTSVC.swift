@@ -15,9 +15,12 @@ class TTSVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
+        self.view.backgroundColor = .white
+        self.navigationItem.title = viewTitle
+        
         playTTSBtn.layer.cornerRadius = 10.0
         ttsResponsiveView.ttsResponsiveViewDelegate = self
+        
         self.view.addSubview(ttsResponsiveView)
         ttsResponsiveView.isHidden = true
         self.voice = "US English Female"

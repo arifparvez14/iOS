@@ -6,6 +6,7 @@
 import UIKit
 
 class ViewNavigator {
+    // swiftlint:disable cyclomatic_complexity
     static func navigateToView(using viewController: UIViewController, and index: Int) {
         let mainSB = UIStoryboard(name: "Main", bundle: nil)
         
@@ -19,7 +20,7 @@ class ViewNavigator {
             guard let swipeToSlideVC = controller else {return}
             
             swipeToSlideVC.viewTitle = Helper.getTopicName(index)
-            swipeToSlideVC.navigationController?.present(swipeToSlideVC, animated: true)
+            viewController.navigationController?.present(swipeToSlideVC, animated: true)
             
         } else if index == 2 {
             let circularAnimationVC = CircularAnimationVC()
@@ -46,7 +47,11 @@ class ViewNavigator {
             viewController.navigationController?.pushViewController(bottomCardVC, animated: true)
             
         } else if index == 6 {
+            let controller = mainSB.instantiateViewController(withIdentifier: "PanGestureVC") as? PanGestureVC
+            guard let panGestureVC = controller else {return}
             
+            panGestureVC.viewTitle = Helper.getTopicName(index)
+            viewController.navigationController?.pushViewController(panGestureVC, animated: true)
         }
     }
 }

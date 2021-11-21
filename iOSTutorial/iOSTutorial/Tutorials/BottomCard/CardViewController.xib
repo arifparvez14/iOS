@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController" customModule="CardViewAnimation" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController" customModule="iOSTutorial" customModuleProvider="target">
             <connections>
                 <outlet property="handleArea" destination="r6F-YW-eeF" id="1Y4-Bw-5yT"/>
                 <outlet property="view" destination="iN0-l3-epB" id="DJP-sT-hnF"/>
@@ -47,7 +47,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="zJO-XV-NL4" firstAttribute="centerX" secondItem="r6F-YW-eeF" secondAttribute="centerX" id="4t4-pW-5yv"/>
                         <constraint firstAttribute="height" constant="65" id="I14-5u-1pH"/>
