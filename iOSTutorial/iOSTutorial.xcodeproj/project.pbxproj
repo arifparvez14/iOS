@@ -15,6 +15,12 @@
 		891CFDB927EAC18C00C6BA7C /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDB827EAC18C00C6BA7C /* ActivityIndicatorView.swift */; };
 		891CFDBB27EAC19800C6BA7C /* ActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDBA27EAC19800C6BA7C /* ActivityIndicatorShape.swift */; };
 		891CFDBD27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDBC27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift */; };
+		891CFDC027EAC55600C6BA7C /* CircularLoaderIndicatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDBF27EAC55600C6BA7C /* CircularLoaderIndicatorVC.swift */; };
+		891CFDC327EAC8DA00C6BA7C /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDC227EAC8DA00C6BA7C /* ProgressView.swift */; };
+		891CFDC527EAC8E000C6BA7C /* ProgressShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDC427EAC8E000C6BA7C /* ProgressShapeLayer.swift */; };
+		891CFDC727EAC8E800C6BA7C /* StrokeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDC627EAC8E800C6BA7C /* StrokeAnimation.swift */; };
+		891CFDC927EAC9AF00C6BA7C /* RotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDC827EAC9AF00C6BA7C /* RotationAnimation.swift */; };
+		891CFDCB27EAC9B700C6BA7C /* StrokeColorAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDCA27EAC9B700C6BA7C /* StrokeColorAnimation.swift */; };
 		8929D00A27493C6100058408 /* PanGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8929D00927493C6100058408 /* PanGestureVC.swift */; };
 		8929D00D27494BFD00058408 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8929D00C27494BFD00058408 /* .swiftlint.yml */; };
 		8947F99B273D29130047C88C /* SQLightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947F99A273D29130047C88C /* SQLightVC.swift */; };
@@ -77,6 +83,12 @@
 		891CFDB827EAC18C00C6BA7C /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		891CFDBA27EAC19800C6BA7C /* ActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorShape.swift; sourceTree = "<group>"; };
 		891CFDBC27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
+		891CFDBF27EAC55600C6BA7C /* CircularLoaderIndicatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderIndicatorVC.swift; sourceTree = "<group>"; };
+		891CFDC227EAC8DA00C6BA7C /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		891CFDC427EAC8E000C6BA7C /* ProgressShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressShapeLayer.swift; sourceTree = "<group>"; };
+		891CFDC627EAC8E800C6BA7C /* StrokeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeAnimation.swift; sourceTree = "<group>"; };
+		891CFDC827EAC9AF00C6BA7C /* RotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationAnimation.swift; sourceTree = "<group>"; };
+		891CFDCA27EAC9B700C6BA7C /* StrokeColorAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeColorAnimation.swift; sourceTree = "<group>"; };
 		8929D00927493C6100058408 /* PanGestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureVC.swift; sourceTree = "<group>"; };
 		8929D00C27494BFD00058408 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8947F99A273D29130047C88C /* SQLightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLightVC.swift; sourceTree = "<group>"; };
@@ -192,6 +204,27 @@
 			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
+		891CFDBE27EAC50500C6BA7C /* CircularLoaderIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				891CFDC127EAC8CE00C6BA7C /* LoaderView */,
+				891CFDBF27EAC55600C6BA7C /* CircularLoaderIndicatorVC.swift */,
+			);
+			path = CircularLoaderIndicator;
+			sourceTree = "<group>";
+		};
+		891CFDC127EAC8CE00C6BA7C /* LoaderView */ = {
+			isa = PBXGroup;
+			children = (
+				891CFDC227EAC8DA00C6BA7C /* ProgressView.swift */,
+				891CFDC427EAC8E000C6BA7C /* ProgressShapeLayer.swift */,
+				891CFDC627EAC8E800C6BA7C /* StrokeAnimation.swift */,
+				891CFDC827EAC9AF00C6BA7C /* RotationAnimation.swift */,
+				891CFDCA27EAC9B700C6BA7C /* StrokeColorAnimation.swift */,
+			);
+			path = LoaderView;
+			sourceTree = "<group>";
+		};
 		8924337D273EB42E0077F587 /* SwipeToSlide */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +298,7 @@
 		8947F99C273D361C0047C88C /* Tutorials */ = {
 			isa = PBXGroup;
 			children = (
+				891CFDBE27EAC50500C6BA7C /* CircularLoaderIndicator */,
 				891CFDB427EABFDC00C6BA7C /* CircularLoader */,
 				8947F99D273D36320047C88C /* SQLite */,
 				8924337D273EB42E0077F587 /* SwipeToSlide */,
@@ -657,23 +691,29 @@
 				891CFDBB27EAC19800C6BA7C /* ActivityIndicatorShape.swift in Sources */,
 				891CFDB627EAC08D00C6BA7C /* CircularLoaderVC.swift in Sources */,
 				89E3A2DD273D06F4008ED573 /* ViewController.swift in Sources */,
+				891CFDC527EAC8E000C6BA7C /* ProgressShapeLayer.swift in Sources */,
 				89E3A30E273D08FE008ED573 /* ItemTVCell.swift in Sources */,
 				898E0D84273E9C1D00A2C9A3 /* SwipeToSlideVC.swift in Sources */,
 				891CFDBD27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				8947F9A3273D370F0047C88C /* InitialDBConfiguration.swift in Sources */,
+				891CFDCB27EAC9B700C6BA7C /* StrokeColorAnimation.swift in Sources */,
 				89F1185827423CE10010FA86 /* TTSResponsiveView.swift in Sources */,
 				89F118612742A6510010FA86 /* CardViewController.swift in Sources */,
 				89E3A2D9273D06F4008ED573 /* AppDelegate.swift in Sources */,
 				8947F9A5273D37630047C88C /* StudentDBModel.swift in Sources */,
 				8947F99F273D36580047C88C /* SQLiteDataStore.swift in Sources */,
 				8947F9A7273D3FF00047C88C /* BaseEntity.swift in Sources */,
+				891CFDC027EAC55600C6BA7C /* CircularLoaderIndicatorVC.swift in Sources */,
 				898E0D86273EB22600A2C9A3 /* CircularAnimationVC.swift in Sources */,
 				89E3A2DB273D06F4008ED573 /* SceneDelegate.swift in Sources */,
 				89F1185A27423D220010FA86 /* TTSVC.swift in Sources */,
+				891CFDC927EAC9AF00C6BA7C /* RotationAnimation.swift in Sources */,
 				89E3A313273D0ED1008ED573 /* ViewNavigator.swift in Sources */,
 				89E3A309273D0783008ED573 /* Helper.swift in Sources */,
+				891CFDC727EAC8E800C6BA7C /* StrokeAnimation.swift in Sources */,
 				89022E522782C6AA00E8AE72 /* NetworkManager.swift in Sources */,
 				89F1185D2742A6370010FA86 /* BottomCardVC.swift in Sources */,
+				891CFDC327EAC8DA00C6BA7C /* ProgressView.swift in Sources */,
 				8947F99B273D29130047C88C /* SQLightVC.swift in Sources */,
 				8929D00A27493C6100058408 /* PanGestureVC.swift in Sources */,
 			);

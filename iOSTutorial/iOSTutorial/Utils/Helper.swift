@@ -17,6 +17,7 @@ class Helper {
         topicsData.append("Bottom Card View")
         topicsData.append("PanGesture")
         topicsData.append("CircularLoader")
+        topicsData.append("CircularLoaderIndicatorVC")
     }
     
     static func getTopicsCount() -> Int {
