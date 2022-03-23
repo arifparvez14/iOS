@@ -52,6 +52,12 @@ class ViewNavigator {
             
             panGestureVC.viewTitle = Helper.getTopicName(index)
             viewController.navigationController?.pushViewController(panGestureVC, animated: true)
+        } else if index == 7 {
+            let controller = mainSB.instantiateViewController(withIdentifier: "CircularLoaderVC") as? CircularLoaderVC
+            guard let circularLoaderVC = controller else {return}
+
+            circularLoaderVC.viewTitle = Helper.getTopicName(index)
+            viewController.navigationController?.pushViewController(circularLoaderVC, animated: true)
         }
     }
 }

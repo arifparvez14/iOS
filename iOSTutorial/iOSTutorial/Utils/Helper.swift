@@ -16,6 +16,7 @@ class Helper {
         topicsData.append("TTS Response")
         topicsData.append("Bottom Card View")
         topicsData.append("PanGesture")
+        topicsData.append("CircularLoader")
     }
     
     static func getTopicsCount() -> Int {

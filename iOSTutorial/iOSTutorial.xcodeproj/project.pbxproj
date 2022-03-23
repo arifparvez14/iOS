@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		6DF5EBEB4BA1D4C1A7C18CDD /* Pods_iOSTutorialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263B6F94D057D93BC2F35BDA /* Pods_iOSTutorialTests.framework */; };
 		788676C61DA6219366076BF1 /* Pods_iOSTutorial_iOSTutorialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC0718DDAEFB3A9B3D58A80 /* Pods_iOSTutorial_iOSTutorialUITests.framework */; };
+		89022E522782C6AA00E8AE72 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89022E512782C6AA00E8AE72 /* NetworkManager.swift */; };
 		891BC16F273F0456009B8DF7 /* AudioRecorderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891BC16E273F0456009B8DF7 /* AudioRecorderVC.swift */; };
+		891CFDB627EAC08D00C6BA7C /* CircularLoaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDB527EAC08D00C6BA7C /* CircularLoaderVC.swift */; };
+		891CFDB927EAC18C00C6BA7C /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDB827EAC18C00C6BA7C /* ActivityIndicatorView.swift */; };
+		891CFDBB27EAC19800C6BA7C /* ActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDBA27EAC19800C6BA7C /* ActivityIndicatorShape.swift */; };
+		891CFDBD27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891CFDBC27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift */; };
 		8929D00A27493C6100058408 /* PanGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8929D00927493C6100058408 /* PanGestureVC.swift */; };
 		8929D00D27494BFD00058408 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8929D00C27494BFD00058408 /* .swiftlint.yml */; };
 		8947F99B273D29130047C88C /* SQLightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947F99A273D29130047C88C /* SQLightVC.swift */; };
@@ -66,7 +71,12 @@
 		263B6F94D057D93BC2F35BDA /* Pods_iOSTutorialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTutorialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66218854C54AD53BC75D3D55 /* Pods-iOSTutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTutorial.debug.xcconfig"; path = "Target Support Files/Pods-iOSTutorial/Pods-iOSTutorial.debug.xcconfig"; sourceTree = "<group>"; };
 		7C0F86DB98CF5BF03A1426F1 /* Pods-iOSTutorial-iOSTutorialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTutorial-iOSTutorialUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSTutorial-iOSTutorialUITests/Pods-iOSTutorial-iOSTutorialUITests.release.xcconfig"; sourceTree = "<group>"; };
+		89022E512782C6AA00E8AE72 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		891BC16E273F0456009B8DF7 /* AudioRecorderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderVC.swift; sourceTree = "<group>"; };
+		891CFDB527EAC08D00C6BA7C /* CircularLoaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderVC.swift; sourceTree = "<group>"; };
+		891CFDB827EAC18C00C6BA7C /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		891CFDBA27EAC19800C6BA7C /* ActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		891CFDBC27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
 		8929D00927493C6100058408 /* PanGestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureVC.swift; sourceTree = "<group>"; };
 		8929D00C27494BFD00058408 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8947F99A273D29130047C88C /* SQLightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLightVC.swift; sourceTree = "<group>"; };
@@ -147,12 +157,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		89022E502782C68300E8AE72 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				89022E512782C6AA00E8AE72 /* NetworkManager.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		891BC16D273F0429009B8DF7 /* AudioRecorder */ = {
 			isa = PBXGroup;
 			children = (
 				891BC16E273F0456009B8DF7 /* AudioRecorderVC.swift */,
 			);
 			path = AudioRecorder;
+			sourceTree = "<group>";
+		};
+		891CFDB427EABFDC00C6BA7C /* CircularLoader */ = {
+			isa = PBXGroup;
+			children = (
+				891CFDB727EAC16D00C6BA7C /* ActivityIndicator */,
+				891CFDB527EAC08D00C6BA7C /* CircularLoaderVC.swift */,
+			);
+			path = CircularLoader;
+			sourceTree = "<group>";
+		};
+		891CFDB727EAC16D00C6BA7C /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				891CFDBC27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift */,
+				891CFDBA27EAC19800C6BA7C /* ActivityIndicatorShape.swift */,
+				891CFDB827EAC18C00C6BA7C /* ActivityIndicatorView.swift */,
+			);
+			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
 		8924337D273EB42E0077F587 /* SwipeToSlide */ = {
@@ -228,6 +265,7 @@
 		8947F99C273D361C0047C88C /* Tutorials */ = {
 			isa = PBXGroup;
 			children = (
+				891CFDB427EABFDC00C6BA7C /* CircularLoader */,
 				8947F99D273D36320047C88C /* SQLite */,
 				8924337D273EB42E0077F587 /* SwipeToSlide */,
 				8924337E273EB4470077F587 /* CircularAnimation */,
@@ -235,6 +273,7 @@
 				89F1185127423C820010FA86 /* TTSDemo */,
 				89F1185B2742A5E30010FA86 /* BottomCard */,
 				8929D0082749355600058408 /* PanGesture */,
+				89022E502782C68300E8AE72 /* Reachability */,
 			);
 			path = Tutorials;
 			sourceTree = "<group>";
@@ -614,9 +653,13 @@
 				8947F9A9273D40440047C88C /* StudentEntity.swift in Sources */,
 				891BC16F273F0456009B8DF7 /* AudioRecorderVC.swift in Sources */,
 				8947F9A1273D36BD0047C88C /* BaseDBModel.swift in Sources */,
+				891CFDB927EAC18C00C6BA7C /* ActivityIndicatorView.swift in Sources */,
+				891CFDBB27EAC19800C6BA7C /* ActivityIndicatorShape.swift in Sources */,
+				891CFDB627EAC08D00C6BA7C /* CircularLoaderVC.swift in Sources */,
 				89E3A2DD273D06F4008ED573 /* ViewController.swift in Sources */,
 				89E3A30E273D08FE008ED573 /* ItemTVCell.swift in Sources */,
 				898E0D84273E9C1D00A2C9A3 /* SwipeToSlideVC.swift in Sources */,
+				891CFDBD27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				8947F9A3273D370F0047C88C /* InitialDBConfiguration.swift in Sources */,
 				89F1185827423CE10010FA86 /* TTSResponsiveView.swift in Sources */,
 				89F118612742A6510010FA86 /* CardViewController.swift in Sources */,
@@ -629,6 +672,7 @@
 				89F1185A27423D220010FA86 /* TTSVC.swift in Sources */,
 				89E3A313273D0ED1008ED573 /* ViewNavigator.swift in Sources */,
 				89E3A309273D0783008ED573 /* Helper.swift in Sources */,
+				89022E522782C6AA00E8AE72 /* NetworkManager.swift in Sources */,
 				89F1185D2742A6370010FA86 /* BottomCardVC.swift in Sources */,
 				8947F99B273D29130047C88C /* SQLightVC.swift in Sources */,
 				8929D00A27493C6100058408 /* PanGestureVC.swift in Sources */,
@@ -809,12 +853,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FKB9SGZZH2;
+				DEVELOPMENT_TEAM = U8GSKB5S38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSTutorial/App/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need to record";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -826,9 +871,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arif.iOSTutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjitgroup.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "BJIT Wild Card";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -841,12 +886,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FKB9SGZZH2;
+				DEVELOPMENT_TEAM = U8GSKB5S38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSTutorial/App/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need to record";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -858,9 +904,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arif.iOSTutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjitgroup.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "BJIT Wild Card";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

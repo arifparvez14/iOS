@@ -8,6 +8,8 @@ target 'iOSTutorial' do
   # Pods for iOSTutorial
   pod 'SQLite.swift', '~> 0.13.0'
   pod 'SwiftLint'
+  pod 'NotificationBannerSwift'
+  pod 'ReachabilitySwift'
 
   target 'iOSTutorialTests' do
     inherit! :search_paths

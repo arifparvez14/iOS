@@ -7,7 +7,6 @@ import UIKit
 
 class PanGestureVC: UIViewController {
 
-    //@IBOutlet weak private var folderIV: UIImageView!
     @IBOutlet weak private var deleteIV: UIImageView!
     
     var folderViewOrigin: CGPoint!
