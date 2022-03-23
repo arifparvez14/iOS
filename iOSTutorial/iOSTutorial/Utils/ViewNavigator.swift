@@ -64,6 +64,12 @@ class ViewNavigator {
 
             circularLoaderVC.viewTitle = Helper.getTopicName(index)
             viewController.navigationController?.pushViewController(circularLoaderVC, animated: true)
+        } else if index == 9 {
+            let controller = mainSB.instantiateViewController(withIdentifier: "SelfFittedTVCellVC") as? SelfFittedTVCellVC
+            guard let circularLoaderVC = controller else {return}
+
+            circularLoaderVC.viewTitle = Helper.getTopicName(index)
+            viewController.navigationController?.pushViewController(circularLoaderVC, animated: true)
         }
     }
 }

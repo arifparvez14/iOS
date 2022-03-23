@@ -30,6 +30,9 @@
 		8947F9A5273D37630047C88C /* StudentDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947F9A4273D37630047C88C /* StudentDBModel.swift */; };
 		8947F9A7273D3FF00047C88C /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947F9A6273D3FF00047C88C /* BaseEntity.swift */; };
 		8947F9A9273D40440047C88C /* StudentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947F9A8273D40440047C88C /* StudentEntity.swift */; };
+		8967DFF927EACDF900E5DDD9 /* InfoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967DFF727EACDF900E5DDD9 /* InfoTVCell.swift */; };
+		8967DFFA27EACDF900E5DDD9 /* InfoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8967DFF827EACDF900E5DDD9 /* InfoTVCell.xib */; };
+		8967DFFD27EACE9C00E5DDD9 /* SelfFittedTVCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967DFFC27EACE9C00E5DDD9 /* SelfFittedTVCellVC.swift */; };
 		898E0D84273E9C1D00A2C9A3 /* SwipeToSlideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898E0D83273E9C1D00A2C9A3 /* SwipeToSlideVC.swift */; };
 		898E0D86273EB22600A2C9A3 /* CircularAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898E0D85273EB22600A2C9A3 /* CircularAnimationVC.swift */; };
 		89E3A2D9273D06F4008ED573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3A2D8273D06F4008ED573 /* AppDelegate.swift */; };
@@ -98,6 +101,9 @@
 		8947F9A4273D37630047C88C /* StudentDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDBModel.swift; sourceTree = "<group>"; };
 		8947F9A6273D3FF00047C88C /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
 		8947F9A8273D40440047C88C /* StudentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEntity.swift; sourceTree = "<group>"; };
+		8967DFF727EACDF900E5DDD9 /* InfoTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTVCell.swift; sourceTree = "<group>"; };
+		8967DFF827EACDF900E5DDD9 /* InfoTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTVCell.xib; sourceTree = "<group>"; };
+		8967DFFC27EACE9C00E5DDD9 /* SelfFittedTVCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfFittedTVCellVC.swift; sourceTree = "<group>"; };
 		898E0D83273E9C1D00A2C9A3 /* SwipeToSlideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToSlideVC.swift; sourceTree = "<group>"; };
 		898E0D85273EB22600A2C9A3 /* CircularAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularAnimationVC.swift; sourceTree = "<group>"; };
 		89E3A2D5273D06F4008ED573 /* iOSTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +268,8 @@
 			children = (
 				89E3A30C273D08FE008ED573 /* ItemTVCell.swift */,
 				89E3A30D273D08FE008ED573 /* ItemTVCell.xib */,
+				8967DFF727EACDF900E5DDD9 /* InfoTVCell.swift */,
+				8967DFF827EACDF900E5DDD9 /* InfoTVCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +306,7 @@
 		8947F99C273D361C0047C88C /* Tutorials */ = {
 			isa = PBXGroup;
 			children = (
+				8967DFFB27EACE6F00E5DDD9 /* SelfFittedTVCell */,
 				891CFDBE27EAC50500C6BA7C /* CircularLoaderIndicator */,
 				891CFDB427EABFDC00C6BA7C /* CircularLoader */,
 				8947F99D273D36320047C88C /* SQLite */,
@@ -324,6 +333,14 @@
 				8947F9A8273D40440047C88C /* StudentEntity.swift */,
 			);
 			path = SQLite;
+			sourceTree = "<group>";
+		};
+		8967DFFB27EACE6F00E5DDD9 /* SelfFittedTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				8967DFFC27EACE9C00E5DDD9 /* SelfFittedTVCellVC.swift */,
+			);
+			path = SelfFittedTVCell;
 			sourceTree = "<group>";
 		};
 		89E3A2CC273D06F3008ED573 = {
@@ -534,6 +551,7 @@
 				8929D00D27494BFD00058408 /* .swiftlint.yml in Resources */,
 				89E3A30F273D08FE008ED573 /* ItemTVCell.xib in Resources */,
 				89F1185627423CC60010FA86 /* resv_1.8.1.html in Resources */,
+				8967DFFA27EACDF900E5DDD9 /* InfoTVCell.xib in Resources */,
 				89E3A2E5273D06F5008ED573 /* LaunchScreen.storyboard in Resources */,
 				89E3A2E2273D06F5008ED573 /* Assets.xcassets in Resources */,
 				89F1185F2742A6490010FA86 /* CardViewController.xib in Resources */,
@@ -696,6 +714,7 @@
 				898E0D84273E9C1D00A2C9A3 /* SwipeToSlideVC.swift in Sources */,
 				891CFDBD27EAC1A000C6BA7C /* ActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				8947F9A3273D370F0047C88C /* InitialDBConfiguration.swift in Sources */,
+				8967DFF927EACDF900E5DDD9 /* InfoTVCell.swift in Sources */,
 				891CFDCB27EAC9B700C6BA7C /* StrokeColorAnimation.swift in Sources */,
 				89F1185827423CE10010FA86 /* TTSResponsiveView.swift in Sources */,
 				89F118612742A6510010FA86 /* CardViewController.swift in Sources */,
@@ -703,6 +722,7 @@
 				8947F9A5273D37630047C88C /* StudentDBModel.swift in Sources */,
 				8947F99F273D36580047C88C /* SQLiteDataStore.swift in Sources */,
 				8947F9A7273D3FF00047C88C /* BaseEntity.swift in Sources */,
+				8967DFFD27EACE9C00E5DDD9 /* SelfFittedTVCellVC.swift in Sources */,
 				891CFDC027EAC55600C6BA7C /* CircularLoaderIndicatorVC.swift in Sources */,
 				898E0D86273EB22600A2C9A3 /* CircularAnimationVC.swift in Sources */,
 				89E3A2DB273D06F4008ED573 /* SceneDelegate.swift in Sources */,
