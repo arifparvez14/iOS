@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TestPPHUD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2b-as-jJt">
+                                <rect key="frame" x="24" y="67" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vWz-UL-1Of"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatus"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PME-EO-9jO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAG-d3-9c0">
+                                <rect key="frame" x="24" y="113" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PP5-7L-9zo"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithImage"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HuA-ul-OkO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCo-P7-A9N">
+                                <rect key="frame" x="24" y="159" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vbr-Q6-fGS"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithImageAndBG"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showSTatusWithImageAndBG:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bEz-1L-tZa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6J-ju-xZT">
+                                <rect key="frame" x="24" y="205" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3CR-IS-Urk"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithSuccess"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithSuccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ARC-1b-aBD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS9-cC-0SV">
+                                <rect key="frame" x="24" y="251" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7yR-CR-EqX"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithSuccessImage"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithSuccessImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Us7-eL-1fb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DV-Jp-GKJ">
+                                <rect key="frame" x="24" y="297" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="T3R-KI-0wF"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithSuccessImageBG"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithSuccessImageBG:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjP-8q-eBs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snu-jL-Puw">
+                                <rect key="frame" x="24" y="343" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pdK-3C-DMW"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithError"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithError:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvK-v5-UW0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTw-L3-B0u">
+                                <rect key="frame" x="24" y="389" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wI4-Sn-YgS"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithErrorImage"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithErrorImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxh-VO-k82"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOQ-uE-niz">
+                                <rect key="frame" x="24" y="435" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jzG-Il-agl"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithErrorImageBG"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithErrorImageBG:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbu-QJ-Kdk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1n-Vh-c9b">
+                                <rect key="frame" x="24" y="481" width="345" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="1u1-It-CT4"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithErrorWithCustomTimer"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithErrorWithCustomTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dtd-L1-DqD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0M-1t-7pw">
+                                <rect key="frame" x="24" y="542" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8DT-7M-3Y5"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ShowStatusWithGlobalConfig"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showStatusWithGlobalConfig:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUY-iO-xIu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hAG-d3-9c0" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="1TC-it-bkO"/>
+                            <constraint firstItem="jS9-cC-0SV" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="1uA-kv-XIB"/>
+                            <constraint firstItem="jS9-cC-0SV" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="5jZ-3M-plz"/>
+                            <constraint firstItem="1DV-Jp-GKJ" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="843-Ip-KH4"/>
+                            <constraint firstItem="bTw-L3-B0u" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="84Z-q3-e27"/>
+                            <constraint firstItem="jS9-cC-0SV" firstAttribute="top" secondItem="M6J-ju-xZT" secondAttribute="bottom" constant="16" id="8P3-eU-mcB"/>
+                            <constraint firstItem="J0M-1t-7pw" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="8ip-y9-nhP"/>
+                            <constraint firstItem="r2b-as-jJt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="9Zp-r1-iXw"/>
+                            <constraint firstItem="1DV-Jp-GKJ" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="A5f-p7-RY5"/>
+                            <constraint firstItem="vCo-P7-A9N" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="AMd-kT-YVc"/>
+                            <constraint firstItem="bTw-L3-B0u" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="AQr-ZN-Mdw"/>
+                            <constraint firstItem="M6J-ju-xZT" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="BmS-Yo-adT"/>
+                            <constraint firstItem="P1n-Vh-c9b" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="HL8-s6-4Oz"/>
+                            <constraint firstItem="wOQ-uE-niz" firstAttribute="top" secondItem="bTw-L3-B0u" secondAttribute="bottom" constant="16" id="I2P-r4-zst"/>
+                            <constraint firstItem="hAG-d3-9c0" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="I8c-h3-dkI"/>
+                            <constraint firstItem="P1n-Vh-c9b" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="IEm-AU-H8R"/>
+                            <constraint firstItem="wOQ-uE-niz" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="L43-Pi-IcP"/>
+                            <constraint firstItem="M6J-ju-xZT" firstAttribute="top" secondItem="vCo-P7-A9N" secondAttribute="bottom" constant="16" id="SnG-I3-E2C"/>
+                            <constraint firstItem="Snu-jL-Puw" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="TgU-09-vbz"/>
+                            <constraint firstItem="wOQ-uE-niz" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" id="Tzc-c8-Okt"/>
+                            <constraint firstItem="1DV-Jp-GKJ" firstAttribute="top" secondItem="jS9-cC-0SV" secondAttribute="bottom" constant="16" id="Vch-0G-hSN"/>
+                            <constraint firstItem="Snu-jL-Puw" firstAttribute="top" secondItem="1DV-Jp-GKJ" secondAttribute="bottom" constant="16" id="VuJ-SB-Ebc"/>
+                            <constraint firstItem="M6J-ju-xZT" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="W8U-ob-EA6"/>
+                            <constraint firstItem="vCo-P7-A9N" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="aag-ZJ-2rj"/>
+                            <constraint firstItem="J0M-1t-7pw" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="iL3-6f-DST"/>
+                            <constraint firstItem="J0M-1t-7pw" firstAttribute="top" secondItem="P1n-Vh-c9b" secondAttribute="bottom" constant="16" id="ixR-mc-sXL"/>
+                            <constraint firstItem="P1n-Vh-c9b" firstAttribute="top" secondItem="wOQ-uE-niz" secondAttribute="bottom" constant="16" id="jhk-6O-P32"/>
+                            <constraint firstItem="r2b-as-jJt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="s8V-xG-Pfd"/>
+                            <constraint firstItem="hAG-d3-9c0" firstAttribute="top" secondItem="r2b-as-jJt" secondAttribute="bottom" constant="16" id="sIj-JP-kJx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r2b-as-jJt" secondAttribute="trailing" constant="24" id="tdK-qS-Q7N"/>
+                            <constraint firstItem="vCo-P7-A9N" firstAttribute="top" secondItem="hAG-d3-9c0" secondAttribute="bottom" constant="16" id="vt4-4R-GbT"/>
+                            <constraint firstItem="Snu-jL-Puw" firstAttribute="leading" secondItem="r2b-as-jJt" secondAttribute="leading" id="weQ-Rk-Z0u"/>
+                            <constraint firstItem="bTw-L3-B0u" firstAttribute="top" secondItem="Snu-jL-Puw" secondAttribute="bottom" constant="16" id="xV5-ww-x8S"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="4"/>
+        </scene>
+    </scenes>
+</document>
