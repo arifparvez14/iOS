@@ -21,6 +21,7 @@ class ViewController: UIViewController, Storyboarded {
         
         var config = Config()
         config.loaderBackgroundColor = .gray
+        config.spinnerColor = .black
         PPHUD.setup(config: config)
     }
     
@@ -48,7 +49,10 @@ class ViewController: UIViewController, Storyboarded {
     @IBAction func showStatusWithImage(_ sender: Any) {
         var config = Config()
         config.loadingImageName = "info"
-        PPHUD.showWithStatus(message: "AMmksmskmskmsmksmkkmskmsmksmkkmskmskmskmskmskmskmskmskms", config: config)
+        //config.loaderImageWidth = 100
+        //config.loaderImageHeight = 10
+        config.dismissTime = 10.0
+        PPHUD.showWithStatus(message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book", config: config)
     }
     
     

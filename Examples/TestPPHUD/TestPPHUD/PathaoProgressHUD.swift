@@ -95,14 +95,14 @@ fileprivate final class PathaoProgressHUD {
         config.errorTextColor = .black
         
         config.loaderStyle = .light
-        config.loaderBackgroundColor = .clear
+        config.loaderBackgroundColor = .white
         config.maskType = .clear
         
-        config.loaderImageWidth = 40.0
-        config.loaderImageHeight = 40.0
+        config.loaderImageWidth = 30.0
+        config.loaderImageHeight = 30.0
         
         config.dismissTime = 3.0
-        config.spinnerColor = .black
+        config.spinnerColor = .white
         
         setup(config: config)
     }
@@ -118,21 +118,67 @@ fileprivate final class PathaoProgressHUD {
     
     //MARK: - Initial setup
     func setup(config: Config?) {
-        globalConfig.loadingImageName = config?.loadingImageName
-        globalConfig.successImageName = config?.successImageName
-        globalConfig.errorImageName = config?.errorImageName
-        globalConfig.showTextColor = config?.showTextColor ?? .black
-        globalConfig.loadingTextColor = config?.loadingTextColor ?? .black
-        globalConfig.successTextColor = config?.successTextColor ?? .black
-        globalConfig.errorTextColor = config?.errorTextColor ?? .black
-        globalConfig.showTextColor = config?.showTextColor ?? .black
-        globalConfig.loaderStyle = config?.loaderStyle ?? .light
-        globalConfig.loaderBackgroundColor = config?.loaderBackgroundColor ?? .clear
-        globalConfig.maskType = config?.maskType ?? MaskType.clear
-        globalConfig.loaderImageWidth = config?.loaderImageWidth ?? 30.0
-        globalConfig.loaderImageHeight = config?.loaderImageHeight ?? 30.0
-        globalConfig.dismissTime = config?.dismissTime ?? 3.0
-        globalConfig.spinnerColor = config?.spinnerColor ?? .black
+        
+        //set image properties
+        if let loadingImageName = config?.loadingImageName {
+            globalConfig.loadingImageName = loadingImageName
+        }
+        
+        if let successImageName = config?.successImageName {
+            globalConfig.successImageName = successImageName
+        }
+        
+        if let errorImageName = config?.errorImageName {
+            globalConfig.errorImageName = errorImageName
+        }
+        
+        //set text color properties
+        if let showTextColor = config?.showTextColor {
+            globalConfig.showTextColor = showTextColor
+        }
+        
+        if let loadingTextColor = config?.loadingTextColor {
+            globalConfig.loadingTextColor = loadingTextColor
+        }
+        
+        if let successTextColor = config?.successTextColor {
+            globalConfig.successTextColor = successTextColor
+        }
+        
+        if let errorTextColor = config?.errorTextColor {
+            globalConfig.errorTextColor = errorTextColor
+        }
+        
+        // set loader properties
+        if let loaderStyle = config?.loaderStyle {
+            globalConfig.loaderStyle = loaderStyle
+        }
+        
+        if let loaderBackgroundColor = config?.loaderBackgroundColor {
+            globalConfig.loaderBackgroundColor = loaderBackgroundColor
+        }
+        
+        if let maskType = config?.maskType {
+            globalConfig.maskType = maskType
+        }
+        
+        if let dismissTime = config?.dismissTime {
+            globalConfig.dismissTime = dismissTime
+        }
+        
+        // set image properties
+        if let loaderImageWidth = config?.loaderImageWidth {
+            globalConfig.loaderImageWidth = loaderImageWidth
+        }
+        
+        if let loaderImageHeight = config?.loaderImageHeight {
+            globalConfig.loaderImageHeight = loaderImageHeight
+        }
+        
+        // set spinner properties
+        if let spinnerColor = config?.spinnerColor {
+            globalConfig.spinnerColor = spinnerColor
+        }
     }
     
     //MARK: - Show PPHUD

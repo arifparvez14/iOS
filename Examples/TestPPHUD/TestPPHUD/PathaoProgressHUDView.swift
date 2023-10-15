@@ -13,17 +13,18 @@ class PathaoProgressHUDView: UIView {
     @IBOutlet weak private var contendView: UIView!
     @IBOutlet weak private var messageLabel: UILabel!
     @IBOutlet weak private var stackView: UIStackView!
-    @IBOutlet weak private var imageContainerView: UIView!
     
-    private var spinnerView: SpinnerView!
+    @IBOutlet weak var spinnerContainerView: UIView!
+    @IBOutlet weak var spinnerView: SpinnerView!
+    
+    @IBOutlet weak var imageContainerVew: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var ivHLC: NSLayoutConstraint!
+    @IBOutlet weak var ivWDL: NSLayoutConstraint!
+    
     private var config: Config?
     
-    private var statusImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .clear
-        return imageView
-    }()
     
     //MARK: - Init
     init(frame: CGRect, config: Config?) {
@@ -46,24 +47,34 @@ class PathaoProgressHUDView: UIView {
     
     //MARK: - HUD Setup
     private func showHUD() {
-        removeAllSubviewFromContainerView()
         
         // set view and image view
         if config?.hudType == .show {
-            addSpinnerViewIntoContainerView(with: config?.spinnerColor ?? .black)
+            spinnerView.lineWidth = 2.0
+            spinnerView.spinnerColor = config?.spinnerColor ?? .white
+            
+            imageView.isHidden = true
+            imageContainerVew.isHidden = true
         } else {
+            
             let imageName = getImageName()
             
             if let imageName {
-                addImageViewIntoContainerView(imageName: imageName, width: config?.loaderImageWidth, height: config?.loaderImageHeight)
+                spinnerContainerView.isHidden = true
+                spinnerView.isHidden = true
+                
+                ivHLC.constant = config?.loaderImageHeight ?? 40.0
+                ivWDL.constant = config?.loaderImageWidth ?? 40.0
+                imageView.image = getImage(from: imageName)
             } else {
-                stackView.removeArrangedSubview(imageContainerView)
+                imageView.isHidden = true
+                imageContainerVew.isHidden = true
             }
         }
         
         // set message label
         if config?.hudType == .show {
-            config?.message != nil ? (setMessageLabel()) : (stackView.removeArrangedSubview(messageLabel))
+            config?.message != nil ? (setMessageLabel()) : (messageLabel.isHidden = true)
         } else {
             setMessageLabel()
         }
@@ -84,43 +95,6 @@ class PathaoProgressHUDView: UIView {
         setMaskType()
     }
     
-    //MARK: - Add and remove subview
-    private func addImageViewIntoContainerView(imageName: String, width: CGFloat?, height: CGFloat?) {
-        self.imageContainerView.addSubview(statusImageView)
-        
-        NSLayoutConstraint.activate([
-            statusImageView.centerXAnchor.constraint(equalTo: imageContainerView.centerXAnchor),
-            statusImageView.centerYAnchor.constraint(equalTo: imageContainerView.centerYAnchor),
-            statusImageView.heightAnchor.constraint(equalToConstant: height ?? 40.0),
-            statusImageView.widthAnchor.constraint(equalToConstant: width ?? 40.0)
-        ])
-        
-        statusImageView.image = getImage(from: imageName)
-    }
-    
-    private func addSpinnerViewIntoContainerView(with color: UIColor) {
-        spinnerView = SpinnerView(frame: .zero)
-        spinnerView.translatesAutoresizingMaskIntoConstraints = false
-        self.imageContainerView.addSubview(spinnerView)
-        
-        NSLayoutConstraint.activate([
-            spinnerView.centerXAnchor.constraint(equalTo: imageContainerView.centerXAnchor),
-            spinnerView.centerYAnchor.constraint(equalTo: imageContainerView.centerYAnchor),
-            spinnerView.heightAnchor.constraint(equalToConstant: 50.0),
-            spinnerView.widthAnchor.constraint(equalToConstant: 50.0)
-        ])
-        
-        spinnerView.lineWidth = 3.0
-        spinnerView.spinnerColor = color
-    }
-    
-    private func removeAllSubviewFromContainerView() {
-        func removeAllSubviews() {
-            imageContainerView.subviews.forEach { subView in
-                subView.removeFromSuperview()
-            }
-        }
-    }
     
     //MARK: - Utils
     private func setMaskType() {
