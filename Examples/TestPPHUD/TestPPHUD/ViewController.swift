@@ -20,14 +20,15 @@ class ViewController: UIViewController, Storyboarded {
         //loader.lineWidth = 5.0
         
         var config = Config()
-        config.loaderBackgroundColor = .gray
-        config.spinnerColor = .black
+        config.loaderStyle = .light
         PPHUD.setup(config: config)
     }
     
     func testSVProgressHUD() {
         //SVProgressHUD.setBackgroundColor(.gray)
-        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultStyle(.light)
+        //SVProgressHUD.setBackgroundColor(.red)
+        
         //SVProgressHUD.setDefaultStyle(.light)
         //SVProgressHUD.showInfo(withStatus: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.")
         SVProgressHUD.show()
@@ -40,19 +41,23 @@ class ViewController: UIViewController, Storyboarded {
     
     
     @IBAction func showStatus(_ sender: Any) {
-        var config = Config()
-        config.loaderBackgroundColor = .black
-        config.spinnerColor = .white
-        PPHUD.show(config: config)
+//        var config = Config()
+//        config.loaderBackgroundColor = .black
+//        config.spinnerColor = .white
+//        //config.loadingTextColor = .white
+//        PPHUD.show(with: "Loading...", config: config)
+        
+        PPHUD.show()
     }
     
     @IBAction func showStatusWithImage(_ sender: Any) {
         var config = Config()
         config.loadingImageName = "info"
-        //config.loaderImageWidth = 100
-        //config.loaderImageHeight = 10
+        config.loaderImageWidth = 100
+        config.loaderImageHeight = 100
+        config.loaderBackgroundColor = .gray
         config.dismissTime = 10.0
-        PPHUD.showWithStatus(message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book", config: config)
+        PPHUD.showWithStatus(message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", config: config)
     }
     
     
@@ -75,112 +80,13 @@ class ViewController: UIViewController, Storyboarded {
     }
     
     
-    @IBAction func showStatusWithSuccess(_ sender: Any) {
-//        PathaoProgressHUD.shared.showSuccessWithStatus(
-//            messageText: "Success",
-//            successImageName: nil,
-//            successTextColor: nil,
-//            loaderBackgroundColor: nil,
-//            loaderStyle: nil,
-//            maskType: .clear,
-//            dismissTime: nil,
-//            loaderImageWidth: nil,
-//            loaderImageHeight: nil)
-    }
-    
-    
-    @IBAction func showStatusWithSuccessImage(_ sender: Any) {
-//        PathaoProgressHUD.shared.showSuccessWithStatus(
-//            messageText: "Success",
-//            successImageName: "success",
-//            successTextColor: .green,
-//            loaderBackgroundColor: nil,
-//            loaderStyle: nil,
-//            maskType: .clear,
-//            dismissTime: nil,
-//            loaderImageWidth: 10.0,
-//            loaderImageHeight: 10.0)
-    }
-    
-    @IBAction func showStatusWithSuccessImageBG(_ sender: Any) {
-//        PathaoProgressHUD.shared.showSuccessWithStatus(
-//            messageText: "Success",
-//            successImageName: "success",
-//            successTextColor: .yellow,
-//            loaderBackgroundColor: .gray,
-//            loaderStyle: nil,
-//            maskType: .clear,
-//            dismissTime: 5.0,
-//            loaderImageWidth: nil,
-//            loaderImageHeight: nil)
-    }
-    
-    
-    @IBAction func showStatusWithError(_ sender: Any) {
-//        PathaoProgressHUD.shared.showErrorWithStatus(
-//            messageText: "Error",
-//            errorImageName: nil,
-//            errorTextColor: nil,
-//            loaderBackgroundColor: nil,
-//            loaderStyle: nil,
-//            maskType: .clear,
-//            dismissTime: nil,
-//            loaderImageWidth: nil,
-//            loaderImageHeight: nil)
-    }
-    
-    @IBAction func showStatusWithErrorImage(_ sender: Any) {
-//        PathaoProgressHUD.shared.showErrorWithStatus(
-//            messageText: "Error",
-//            errorImageName: "error",
-//            errorTextColor: .red,
-//            loaderBackgroundColor: nil,
-//            loaderStyle: nil,
-//            maskType: .clear,
-//            dismissTime: 5.0,
-//            loaderImageWidth: 30.0,
-//            loaderImageHeight: 30.0)
-    }
-    
-    @IBAction func showStatusWithErrorImageBG(_ sender: Any) {
-//        PathaoProgressHUD.shared.showErrorWithStatus(
-//            messageText: "Error",
-//            errorImageName: "error",
-//            errorTextColor: .cyan,
-//            loaderBackgroundColor: .gray,
-//            loaderStyle: nil,
-//            maskType: .clear,
-//            dismissTime: nil,
-//            loaderImageWidth: 10.0,
-//            loaderImageHeight: 10.0)
-    }
-    
-    @IBAction func showStatusWithErrorWithCustomTimer(_ sender: Any) {
-//        PathaoProgressHUD.shared.showErrorWithStatus(
-//            messageText: "Error",
-//            errorImageName: "error",
-//            errorTextColor: .magenta,
-//            loaderBackgroundColor: nil,
-//            loaderStyle: nil,
-//            maskType: .clear,
-//            dismissTime: 2.0,
-//            loaderImageWidth: 10.0,
-//            loaderImageHeight: 10.0)
-    }
-    
-    @IBAction func showStatusWithGlobalConfig(_ sender: Any) {
-        //PathaoProgressHUD.shared.setupLoader(successTextColor: .orange, loaderBackgroundColor: .gray, dismissTime: 5.0)
-//        PathaoProgressHUD.shared.showSuccessWithStatus(
-//            messageText: "Success",
-//            successImageName: "success",
-//            successTextColor: nil,
-//            loaderBackgroundColor: nil,
-//            loaderStyle: nil,
-//            maskType: .clear,
-//            dismissTime: nil,
-//            loaderImageWidth: 10.0,
-//            loaderImageHeight: 10.0)
-        
-    }
+    @IBAction func showStatusWithSuccess(_ sender: Any) {}
+    @IBAction func showStatusWithSuccessImage(_ sender: Any) {}
+    @IBAction func showStatusWithSuccessImageBG(_ sender: Any) {}
+    @IBAction func showStatusWithError(_ sender: Any) {}
+    @IBAction func showStatusWithErrorImage(_ sender: Any) {}
+    @IBAction func showStatusWithErrorImageBG(_ sender: Any) {}
+    @IBAction func showStatusWithErrorWithCustomTimer(_ sender: Any) {}
+    @IBAction func showStatusWithGlobalConfig(_ sender: Any) {}
 }
 

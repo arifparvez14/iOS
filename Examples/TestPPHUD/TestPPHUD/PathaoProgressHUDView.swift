@@ -93,6 +93,9 @@ class PathaoProgressHUDView: UIView {
         
         //setMaskType
         setMaskType()
+        
+        //set style
+        //setStyle()
     }
     
     
@@ -112,7 +115,7 @@ class PathaoProgressHUDView: UIView {
     
     private func setContendView() {
         contendView.backgroundColor = config?.loaderBackgroundColor
-        contendView.layer.cornerRadius = 10
+        contendView.layer.cornerRadius = 13
     }
     
     private func setMessageLabel() {
@@ -143,6 +146,21 @@ class PathaoProgressHUDView: UIView {
         case .showWithError:
             return config?.errorImageName
         }
+    }
+    
+    private func setStyle() {
+        if config?.loaderStyle == .light {
+            messageLabel.textColor = .black
+            contendView.backgroundColor = .white
+            imageView.tintColor = .black
+            spinnerView.spinnerColor = .black
+        } else {
+            messageLabel.textColor = .white
+            contendView.backgroundColor = .black
+            imageView.tintColor = .white
+            spinnerView.spinnerColor = .white
+        }
+        
     }
     
     //MARK: - Utils

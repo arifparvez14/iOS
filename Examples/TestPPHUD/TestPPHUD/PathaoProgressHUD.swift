@@ -89,10 +89,10 @@ fileprivate final class PathaoProgressHUD {
     private func setGlobalConfig() {
         var config = Config()
         
-        config.showTextColor = .black
-        config.loadingTextColor = .black
-        config.successTextColor = .black
-        config.errorTextColor = .black
+        config.showTextColor = .white
+        config.loadingTextColor = .white
+        config.successTextColor = .white
+        config.errorTextColor = .white
         
         config.loaderStyle = .light
         config.loaderBackgroundColor = .white
