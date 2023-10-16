@@ -130,8 +130,8 @@ public final class PPHUD {
     }
 
     /// Remove the topmost loader from the view
-    class func remove() {
-        PathaoProgressHUD.shared.remove()
+    class func removeTop() {
+        PathaoProgressHUD.shared.removeTop()
     }
 
     /// Remove all loader from the view
@@ -182,6 +182,7 @@ fileprivate final class PathaoProgressHUD {
     
     //MARK: - Initial setup
     func setup(config: Config?) {
+        //map
         
         //set image properties
         if let loadingImageName = config?.loadingImageName {
@@ -298,12 +299,11 @@ fileprivate final class PathaoProgressHUD {
         }
     }
     
-    func remove() {
+    func removeTop() {
         let lastSubview = self.window?.subviews.last
         if lastSubview is PathaoProgressHUDView {
             lastSubview?.removeFromSuperview()
         }
-        self.window = nil
     }
     
     func removeAll() {
