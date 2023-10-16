@@ -16,7 +16,6 @@ enum MaskType {
     case clear
     case black
     case gray
-    //case custom(UIColor)
 }
 
 enum HUDType {
@@ -25,6 +24,36 @@ enum HUDType {
     case showWithSuccess
     case showWithError
 }
+
+/// Loader configuration.
+/// - Parameter:
+///     - message: Loader message
+///     - loadingImageName: Set status loader image name.
+///     - successImageName: Set success loader image name.
+///     - errorImageName: Set error loader image name.
+///     - showTextColor: Set spinner loader text color.
+///         - default value: .white
+///     - loadingTextColor: Set status loader text color.
+///         - default value: .white
+///     - successTextColor: Set success loader text color.
+///         - default value: .white
+///     - errorTextColor: Set error loader text color.
+///         - default value: .white
+///     - loaderStyle: Set loader style (dark or light).
+///         - default value: .light
+///     - loaderBackgroundColor: Set loader background color.
+///         - default value: .white
+///     - maskType: Set loader view background color.
+///         - default value: .clear
+///     - loaderImageWidth: Set loader (status/success/error) image width.
+///         - default value: 30
+///     - loaderImageHeight: Set loader (status/success/error) image height.
+///         - default value: 30
+///     - dismissTime: Set success and error loader dismiss time.
+///         - default value: 3s
+///     - spinnerColor: Set loader (status/success/error) image height.
+///         - default value: .white
+///
 
 struct Config {
     var message: String?
@@ -46,30 +75,66 @@ struct Config {
 }
 
 public final class PPHUD {
+    /// Setup loader global configuration
+    ///
+    /// - Parameters:
+    ///    - config: Loader configurations
     class func setup(config: Config?) {
         PathaoProgressHUD.shared.setup(config: config)
     }
     
+    /// Show spinner loader
+    ///
+    /// Show spinner loader with optional parameter message and configurations.
+    /// - If the message is not set, only the spinner loader will show.
+    /// - If the config parameter is set, the spinner loader will show with this configuration otherwise loader will show with global configurations.
+    ///
+    /// - Parameters:
+    ///   - message: (Optional) Status message.
+    ///   - config: (Optional) Loader configurations.
     class func show(with message: String? = nil, config: Config? = nil) {
         PathaoProgressHUD.shared.show(with: message, config: config)
     }
     
+    /// Show status loader with message and configurations
+    ///
+    /// - If the config parameter is set, the loader will show with this configuration otherwise loader will show with global configurations.
+    ///
+    /// - Parameters:
+    ///   - message: Status message.
+    ///   - config: (Optional) Loader configurations.
     class func showWithStatus(message: String, config: Config? = nil){
         PathaoProgressHUD.shared.showWithStatus(message: message, config: config)
     }
 
+    /// Show Success loader with message and configurations
+    ///
+    /// - If the config parameter is set, the loader will show with this configuration otherwise loader will show with global configurations.
+    ///
+    /// - Parameters:
+    ///   - message: Status message.
+    ///   - config: (Optional) Loader configurations.
     class func showSuccessWithStatus(message: String, config: Config? = nil) {
         PathaoProgressHUD.shared.showSuccessWithStatus(message: message, config: config)
     }
 
+    /// Show Error loader with message and configurations
+    ///
+    /// - If the config parameter is set, the loader will show with this configuration otherwise loader will show with global configurations.
+    ///
+    /// - Parameters:
+    ///   - message: Status message.
+    ///   - config: (Optional) Loader configurations.
     class func showErrorWithStatus(message: String, config: Config? = nil) {
         PathaoProgressHUD.shared.showErrorWithStatus(message: message, config: config)
     }
 
-    class func removeFromTop() {
-        PathaoProgressHUD.shared.removeFromTop()
+    /// Remove the topmost loader from the view
+    class func remove() {
+        PathaoProgressHUD.shared.remove()
     }
 
+    /// Remove all loader from the view
     class func removeAll() {
         PathaoProgressHUD.shared.removeAll()
     }
@@ -94,7 +159,6 @@ fileprivate final class PathaoProgressHUD {
         config.successTextColor = .white
         config.errorTextColor = .white
         
-        config.loaderStyle = .light
         config.loaderBackgroundColor = .white
         config.maskType = .clear
         
@@ -234,7 +298,7 @@ fileprivate final class PathaoProgressHUD {
         }
     }
     
-    func removeFromTop() {
+    func remove() {
         let lastSubview = self.window?.subviews.last
         if lastSubview is PathaoProgressHUDView {
             lastSubview?.removeFromSuperview()

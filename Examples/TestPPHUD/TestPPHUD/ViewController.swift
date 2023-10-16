@@ -16,27 +16,9 @@ class ViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //testSVProgressHUD()
-        //loader.lineWidth = 5.0
-        
         var config = Config()
-        config.loaderStyle = .light
+        config.loaderStyle = .dark
         PPHUD.setup(config: config)
-    }
-    
-    func testSVProgressHUD() {
-        //SVProgressHUD.setBackgroundColor(.gray)
-        SVProgressHUD.setDefaultStyle(.light)
-        //SVProgressHUD.setBackgroundColor(.red)
-        
-        //SVProgressHUD.setDefaultStyle(.light)
-        //SVProgressHUD.showInfo(withStatus: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.")
-        SVProgressHUD.show()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-            SVProgressHUD.dismiss()
-            //SVProgressHUD.show()
-        }
     }
     
     
@@ -79,6 +61,35 @@ class ViewController: UIViewController, Storyboarded {
         //PPHUD.show()
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    func testSVProgressHUD() {
+        //SVProgressHUD.setBackgroundColor(.gray)
+        SVProgressHUD.setDefaultStyle(.light)
+        SVProgressHUD.setBackgroundColor(.red)
+        
+        //SVProgressHUD.setDefaultStyle(.light)
+        //SVProgressHUD.showInfo(withStatus: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.")
+        SVProgressHUD.show()
+        //SVProgressHUD.show(withStatus: <#T##String?#>)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+            SVProgressHUD.dismiss()
+            //SVProgressHUD.show()
+        }
+    }
     
     @IBAction func showStatusWithSuccess(_ sender: Any) {}
     @IBAction func showStatusWithSuccessImage(_ sender: Any) {}

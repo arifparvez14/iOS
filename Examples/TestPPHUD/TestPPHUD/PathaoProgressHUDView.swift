@@ -14,17 +14,16 @@ class PathaoProgressHUDView: UIView {
     @IBOutlet weak private var messageLabel: UILabel!
     @IBOutlet weak private var stackView: UIStackView!
     
-    @IBOutlet weak var spinnerContainerView: UIView!
-    @IBOutlet weak var spinnerView: SpinnerView!
+    @IBOutlet weak private var spinnerContainerView: UIView!
+    @IBOutlet weak private var spinnerView: SpinnerView!
     
-    @IBOutlet weak var imageContainerVew: UIView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak private var imageContainerVew: UIView!
+    @IBOutlet weak private var imageView: UIImageView!
     
-    @IBOutlet weak var ivHLC: NSLayoutConstraint!
-    @IBOutlet weak var ivWDL: NSLayoutConstraint!
+    @IBOutlet weak private var ivHLC: NSLayoutConstraint!
+    @IBOutlet weak private var ivWDL: NSLayoutConstraint!
     
     private var config: Config?
-    
     
     //MARK: - Init
     init(frame: CGRect, config: Config?) {
@@ -48,7 +47,38 @@ class PathaoProgressHUDView: UIView {
     //MARK: - HUD Setup
     private func showHUD() {
         
-        // set view and image view
+        //set view and image view
+        setSpinnerAndImageView()
+        
+        // set message label
+        if config?.hudType == .show {
+            config?.message != nil ? (setMessageLabel()) : (messageLabel.isHidden = true)
+        } else {
+            setMessageLabel()
+        }
+        
+        //set dismiss time
+        if config?.hudType != .show {
+            if config?.dismissTime != nil {
+                DispatchQueue.main.asyncAfter(deadline: .now() + (config?.dismissTime ?? 3.0)) {
+                    PPHUD.remove()
+                }
+            }
+        }
+        
+        //set contendView
+        setContendView()
+        
+        //setMaskType
+        setMaskType()
+        
+        //set style
+        setStyle()
+    }
+    
+    
+    //MARK: - Setter and getter
+    private func setSpinnerAndImageView() {
         if config?.hudType == .show {
             spinnerView.lineWidth = 2.0
             spinnerView.spinnerColor = config?.spinnerColor ?? .white
@@ -71,35 +101,8 @@ class PathaoProgressHUDView: UIView {
                 imageContainerVew.isHidden = true
             }
         }
-        
-        // set message label
-        if config?.hudType == .show {
-            config?.message != nil ? (setMessageLabel()) : (messageLabel.isHidden = true)
-        } else {
-            setMessageLabel()
-        }
-        
-        //set dismiss time
-        if config?.hudType != .show {
-            if config?.dismissTime != nil {
-                DispatchQueue.main.asyncAfter(deadline: .now() + (config?.dismissTime ?? 3.0)) {
-                    PPHUD.removeFromTop()
-                }
-            }
-        }
-        
-        //set contendView
-        setContendView()
-        
-        //setMaskType
-        setMaskType()
-        
-        //set style
-        //setStyle()
     }
     
-    
-    //MARK: - Utils
     private func setMaskType() {
         switch config?.maskType {
         case .clear:
@@ -135,6 +138,20 @@ class PathaoProgressHUDView: UIView {
         }
     }
     
+    private func setStyle() {
+        if config?.loaderStyle == .light {
+            messageLabel.textColor = .black
+            contendView.backgroundColor = .white
+            imageView.tintColor = .black
+            spinnerView.spinnerColor = .black
+        } else {
+            messageLabel.textColor = .white
+            contendView.backgroundColor = .black
+            imageView.tintColor = .white
+            spinnerView.spinnerColor = .white
+        }
+    }
+    
     private func getImageName() -> String? {
         switch config?.hudType {
         case .show, .none:
@@ -148,19 +165,8 @@ class PathaoProgressHUDView: UIView {
         }
     }
     
-    private func setStyle() {
-        if config?.loaderStyle == .light {
-            messageLabel.textColor = .black
-            contendView.backgroundColor = .white
-            imageView.tintColor = .black
-            spinnerView.spinnerColor = .black
-        } else {
-            messageLabel.textColor = .white
-            contendView.backgroundColor = .black
-            imageView.tintColor = .white
-            spinnerView.spinnerColor = .white
-        }
-        
+    private func getImage(from string: String) -> UIImage {
+        return UIImage(named: string) ?? UIImage()
     }
     
     //MARK: - Utils
@@ -171,10 +177,6 @@ class PathaoProgressHUDView: UIView {
         return view
     }
     
-    private func getImage(from string: String) -> UIImage {
-        return UIImage(named: string) ?? UIImage()
-    }
-    
     private func addTapGestureOnContainerView() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         self.conteinerView.addGestureRecognizer(tap)
@@ -182,6 +184,6 @@ class PathaoProgressHUDView: UIView {
     }
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-        PPHUD.removeFromTop()
+        PPHUD.remove()
     }
 }
