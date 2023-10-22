@@ -87,15 +87,13 @@ class PathaoProgressHUDView: UIView {
             imageContainerVew.isHidden = true
         } else {
             
-            let imageName = getImageName()
-            
-            if let imageName {
+            if let isImageExist = hasStatusImage() {
                 spinnerContainerView.isHidden = true
                 spinnerView.isHidden = true
                 
                 ivHLC.constant = config?.loaderImageHeight ?? 40.0
                 ivWDL.constant = config?.loaderImageWidth ?? 40.0
-                imageView.image = getImage(from: imageName)
+                imageView.image = getImage()
             } else {
                 imageView.isHidden = true
                 imageContainerVew.isHidden = true
@@ -108,9 +106,9 @@ class PathaoProgressHUDView: UIView {
         case .clear:
             conteinerView.backgroundColor = .clear
         case.black:
-            conteinerView.backgroundColor = UIColor.loaderCustomBackgroundColor()
+            conteinerView.backgroundColor = UIColor.init(red: 46 / 255, green: 46 / 255, blue: 46 / 255, alpha: 1)
         case .gray:
-            conteinerView.backgroundColor = UIColor.loaderGrayBackgroundColor()
+            conteinerView.backgroundColor = UIColor.init(red: 128 / 255, green: 128 / 255, blue: 128 / 255, alpha: 0.5)
         case .none:
             conteinerView.backgroundColor = .clear
         }
@@ -146,27 +144,36 @@ class PathaoProgressHUDView: UIView {
             spinnerView.spinnerColor = .black
         } else {
             messageLabel.textColor = .white
-            contendView.backgroundColor = .black
+            contendView.backgroundColor = UIColor.init(red: 49/255, green: 49/255, blue: 49/255, alpha: 1)
             imageView.tintColor = .white
             spinnerView.spinnerColor = .white
         }
     }
     
-    private func getImageName() -> String? {
+    private func hasStatusImage() -> Bool? {
         switch config?.hudType {
         case .show, .none:
             return nil
         case .showWithStatus:
-            return config?.loadingImageName
+            return config?.loadingImage != nil ? true : nil
         case .showWithSuccess:
-            return config?.successImageName
+            return config?.successImage != nil ? true : nil
         case .showWithError:
-            return config?.errorImageName
+            return config?.errorImage != nil ? true : nil
         }
     }
     
-    private func getImage(from string: String) -> UIImage {
-        return UIImage(named: string) ?? UIImage()
+    private func getImage() -> UIImage {
+        switch config?.hudType {
+        case .show, .none:
+            return UIImage()
+        case .showWithStatus:
+            return config?.loadingImage ?? UIImage()
+        case .showWithSuccess:
+            return config?.successImage ?? UIImage()
+        case .showWithError:
+            return config?.errorImage ?? UIImage()
+        }
     }
     
     //MARK: - Utils

@@ -8,14 +8,11 @@
 import UIKit
 import SVProgressHUD
 
-class ViewController: UIViewController, Storyboarded {
-
-    var window = UIApplication.shared.keyWindowInConnectedScenes ?? UIWindow()
-    var viewTag = 100
-    var ppHUDView: PathaoProgressHUDView!
+class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //testSVProgressHUD()
         var config = Config()
         config.loaderStyle = .dark
         PPHUD.setup(config: config)
@@ -34,7 +31,7 @@ class ViewController: UIViewController, Storyboarded {
     
     @IBAction func showStatusWithImage(_ sender: Any) {
         var config = Config()
-        config.loadingImageName = "info"
+        config.loadingImage = UIImage(named: "info")
         config.loaderImageWidth = 100
         config.loaderImageHeight = 100
         config.loaderBackgroundColor = .gray
@@ -76,16 +73,16 @@ class ViewController: UIViewController, Storyboarded {
     
     
     func testSVProgressHUD() {
-        //SVProgressHUD.setBackgroundColor(.gray)
-        SVProgressHUD.setDefaultStyle(.light)
-        SVProgressHUD.setBackgroundColor(.red)
+        
+        SVProgressHUD.setDefaultStyle(.dark)
+        //SVProgressHUD.setBackgroundColor(.red)
         
         //SVProgressHUD.setDefaultStyle(.light)
         //SVProgressHUD.showInfo(withStatus: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.")
         SVProgressHUD.show()
         //SVProgressHUD.show(withStatus: <#T##String?#>)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 100.0) {
             SVProgressHUD.dismiss()
             //SVProgressHUD.show()
         }

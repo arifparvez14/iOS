@@ -28,9 +28,9 @@ enum HUDType {
 /// Loader configuration.
 /// - Parameter:
 ///     - message: Loader message
-///     - loadingImageName: Set status loader image name.
-///     - successImageName: Set success loader image name.
-///     - errorImageName: Set error loader image name.
+///     - loadingImage: Set status loader image.
+///     - successImage: Set success loader image.
+///     - errorImage: Set error loader image.
 ///     - showTextColor: Set spinner loader text color.
 ///         - default value: .white
 ///     - loadingTextColor: Set status loader text color.
@@ -57,9 +57,9 @@ enum HUDType {
 
 struct Config {
     var message: String?
-    var loadingImageName: String?
-    var successImageName: String?
-    var errorImageName: String?
+    var loadingImage: UIImage?
+    var successImage: UIImage?
+    var errorImage: UIImage?
     var showTextColor: UIColor?
     var loadingTextColor: UIColor?
     var successTextColor: UIColor?
@@ -152,23 +152,19 @@ fileprivate final class PathaoProgressHUD {
     }
     
     private func setGlobalConfig() {
-        var config = Config()
+        globalConfig.showTextColor = .white
+        globalConfig.loadingTextColor = .white
+        globalConfig.successTextColor = .white
+        globalConfig.errorTextColor = .white
         
-        config.showTextColor = .white
-        config.loadingTextColor = .white
-        config.successTextColor = .white
-        config.errorTextColor = .white
+        globalConfig.loaderBackgroundColor = .white
+        globalConfig.maskType = .clear
         
-        config.loaderBackgroundColor = .white
-        config.maskType = .clear
+        globalConfig.loaderImageWidth = 30.0
+        globalConfig.loaderImageHeight = 30.0
         
-        config.loaderImageWidth = 30.0
-        config.loaderImageHeight = 30.0
-        
-        config.dismissTime = 3.0
-        config.spinnerColor = .white
-        
-        setup(config: config)
+        globalConfig.dismissTime = 3.0
+        globalConfig.spinnerColor = .white
     }
     
     private func initWindow() {
@@ -185,16 +181,16 @@ fileprivate final class PathaoProgressHUD {
         //map
         
         //set image properties
-        if let loadingImageName = config?.loadingImageName {
-            globalConfig.loadingImageName = loadingImageName
+        if let loadingImage = config?.loadingImage {
+            globalConfig.loadingImage = loadingImage
         }
         
-        if let successImageName = config?.successImageName {
-            globalConfig.successImageName = successImageName
+        if let successImage = config?.successImage {
+            globalConfig.successImage = successImage
         }
         
-        if let errorImageName = config?.errorImageName {
-            globalConfig.errorImageName = errorImageName
+        if let errorImage = config?.errorImage {
+            globalConfig.errorImage = errorImage
         }
         
         //set text color properties
@@ -267,9 +263,9 @@ fileprivate final class PathaoProgressHUD {
         var hudConfig = Config()
         
         hudConfig.message = message
-        hudConfig.loadingImageName = config?.loadingImageName ?? globalConfig.loadingImageName
-        hudConfig.successImageName = config?.successImageName ?? globalConfig.successImageName
-        hudConfig.errorImageName = config?.errorImageName ?? globalConfig.errorImageName
+        hudConfig.loadingImage = config?.loadingImage ?? globalConfig.loadingImage
+        hudConfig.successImage = config?.successImage ?? globalConfig.successImage
+        hudConfig.errorImage = config?.errorImage ?? globalConfig.errorImage
         hudConfig.showTextColor = config?.showTextColor ?? globalConfig.showTextColor
         hudConfig.loadingTextColor = config?.loadingTextColor ?? globalConfig.loadingTextColor
         hudConfig.successTextColor = config?.successTextColor ?? globalConfig.successTextColor

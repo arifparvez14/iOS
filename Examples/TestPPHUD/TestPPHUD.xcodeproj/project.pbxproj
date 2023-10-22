@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		852479052AD41A360013AF2D /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852479042AD41A360013AF2D /* UIApplicationExtension.swift */; };
 		85D0BCD82AD67FFC00FEFD8C /* PathaoProgressHUDSpinLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCD72AD67FFC00FEFD8C /* PathaoProgressHUDSpinLoader.swift */; };
 		85FD49DF2AD2900600CD015F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD49DE2AD2900600CD015F /* AppDelegate.swift */; };
 		85FD49E12AD2900600CD015F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD49E02AD2900600CD015F /* SceneDelegate.swift */; };
@@ -15,8 +14,6 @@
 		85FD49E62AD2900600CD015F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FD49E42AD2900600CD015F /* Main.storyboard */; };
 		85FD49E82AD2900900CD015F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FD49E72AD2900900CD015F /* Assets.xcassets */; };
 		85FD49EB2AD2900900CD015F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FD49E92AD2900900CD015F /* LaunchScreen.storyboard */; };
-		85FD49FC2AD2972700CD015F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD49FB2AD2972700CD015F /* UIColorExtension.swift */; };
-		85FD49FE2AD29A6B00CD015F /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD49FD2AD29A6B00CD015F /* UIStoryboardExtension.swift */; };
 		85FD4A002AD29F6700CD015F /* PathaoProgressHUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FD49FF2AD29F6700CD015F /* PathaoProgressHUDView.xib */; };
 		85FD4A022AD2A4FA00CD015F /* PathaoProgressHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD4A012AD2A4FA00CD015F /* PathaoProgressHUDView.swift */; };
 		85FD4A272AD2D9BB00CD015F /* PathaoProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD4A262AD2D9BB00CD015F /* PathaoProgressHUD.swift */; };
@@ -27,7 +24,6 @@
 		0BB61529A03395826C217CC2 /* Pods_TestPPHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPPHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC605BBF4F6931F798DE996 /* Pods-TestPPHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPPHUD.release.xcconfig"; path = "Target Support Files/Pods-TestPPHUD/Pods-TestPPHUD.release.xcconfig"; sourceTree = "<group>"; };
 		6EEDF03E52F12A43F14586A6 /* Pods-TestPPHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPPHUD.debug.xcconfig"; path = "Target Support Files/Pods-TestPPHUD/Pods-TestPPHUD.debug.xcconfig"; sourceTree = "<group>"; };
-		852479042AD41A360013AF2D /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		85D0BCD72AD67FFC00FEFD8C /* PathaoProgressHUDSpinLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathaoProgressHUDSpinLoader.swift; sourceTree = "<group>"; };
 		85FD49DB2AD2900600CD015F /* TestPPHUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPPHUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85FD49DE2AD2900600CD015F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,8 +33,6 @@
 		85FD49E72AD2900900CD015F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85FD49EA2AD2900900CD015F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85FD49EC2AD2900900CD015F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85FD49FB2AD2972700CD015F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		85FD49FD2AD29A6B00CD015F /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
 		85FD49FF2AD29F6700CD015F /* PathaoProgressHUDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathaoProgressHUDView.xib; sourceTree = "<group>"; };
 		85FD4A012AD2A4FA00CD015F /* PathaoProgressHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathaoProgressHUDView.swift; sourceTree = "<group>"; };
 		85FD4A262AD2D9BB00CD015F /* PathaoProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathaoProgressHUD.swift; sourceTree = "<group>"; };
@@ -84,23 +78,12 @@
 				85FD49E72AD2900900CD015F /* Assets.xcassets */,
 				85FD49E92AD2900900CD015F /* LaunchScreen.storyboard */,
 				85FD49EC2AD2900900CD015F /* Info.plist */,
-				85FD4A252AD2D81200CD015F /* Extension */,
 				85FD49FF2AD29F6700CD015F /* PathaoProgressHUDView.xib */,
 				85FD4A012AD2A4FA00CD015F /* PathaoProgressHUDView.swift */,
 				85FD4A262AD2D9BB00CD015F /* PathaoProgressHUD.swift */,
 				85D0BCD72AD67FFC00FEFD8C /* PathaoProgressHUDSpinLoader.swift */,
 			);
 			path = TestPPHUD;
-			sourceTree = "<group>";
-		};
-		85FD4A252AD2D81200CD015F /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				85FD49FB2AD2972700CD015F /* UIColorExtension.swift */,
-				85FD49FD2AD29A6B00CD015F /* UIStoryboardExtension.swift */,
-				852479042AD41A360013AF2D /* UIApplicationExtension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		9BE8CCD8653690B7A5C859C8 /* Pods */ = {
@@ -238,9 +221,6 @@
 			files = (
 				85FD4A022AD2A4FA00CD015F /* PathaoProgressHUDView.swift in Sources */,
 				85D0BCD82AD67FFC00FEFD8C /* PathaoProgressHUDSpinLoader.swift in Sources */,
-				85FD49FC2AD2972700CD015F /* UIColorExtension.swift in Sources */,
-				85FD49FE2AD29A6B00CD015F /* UIStoryboardExtension.swift in Sources */,
-				852479052AD41A360013AF2D /* UIApplicationExtension.swift in Sources */,
 				85FD49E32AD2900600CD015F /* ViewController.swift in Sources */,
 				85FD49DF2AD2900600CD015F /* AppDelegate.swift in Sources */,
 				85FD49E12AD2900600CD015F /* SceneDelegate.swift in Sources */,
