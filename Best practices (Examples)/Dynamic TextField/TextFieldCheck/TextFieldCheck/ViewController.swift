@@ -17,14 +17,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         let regex = "^[0-9]*$"
-        let characters = CharacterSet(charactersIn: "!@#$%^&*()")
-        //customTextField.config(inputSetType: InputSetType.regex(regex))
+        //let characters = CharacterSet(charactersIn: "!@#$%^&*()")
+        customTextField.config(inputSetType: InputSetType.regex(regex))
         
-        let inputCharacters = CharacterSet(charactersIn: "!@#$")
-        //customTextField.config(inputSetType: .allowCharactersSet(inputCharacters))
-        //customTextField.config(inputSetType: InputSetType.disallowCharacterSet(inputCharacters), totalCharacterSet: characters, maxLength: 10)
+        let characters = CharacterSet(charactersIn: "!@#$")
+        customTextField.config(inputSetType: .disallowCharacterSet(CharacterSet(charactersIn: "!@#$")))
+        
+        
+        
+        customTextField.config(inputSetType: InputSetType.disallowCharacterSet(CharacterSet(charactersIn: "!@#$")), totalCharacterSet: CharacterSet(charactersIn: "!@#$%^&*()_+{}[]|\"<>,.~`/:;"), maxLength: 10)
         //var ch = NSCharacterSet.decimalDigits
-        customTextField.config(inputSetType: .validCharacterSet(NSCharacterSet.decimalDigits))
+        
+        customTextField.config(inputSetType: .invalidCharacterSet(NSCharacterSet.decimalDigits))
     }
     
     @IBAction func showText(_ sender: Any) {

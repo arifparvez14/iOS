@@ -50,6 +50,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		854B63482AED747100151D78 /* PathaoProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				85FD49FF2AD29F6700CD015F /* PathaoProgressHUDView.xib */,
+				85FD4A012AD2A4FA00CD015F /* PathaoProgressHUDView.swift */,
+				85FD4A262AD2D9BB00CD015F /* PathaoProgressHUD.swift */,
+				85D0BCD72AD67FFC00FEFD8C /* PathaoProgressHUDSpinLoader.swift */,
+			);
+			path = PathaoProgressHUD;
+			sourceTree = "<group>";
+		};
 		85FD49D22AD2900600CD015F = {
 			isa = PBXGroup;
 			children = (
@@ -78,10 +89,7 @@
 				85FD49E72AD2900900CD015F /* Assets.xcassets */,
 				85FD49E92AD2900900CD015F /* LaunchScreen.storyboard */,
 				85FD49EC2AD2900900CD015F /* Info.plist */,
-				85FD49FF2AD29F6700CD015F /* PathaoProgressHUDView.xib */,
-				85FD4A012AD2A4FA00CD015F /* PathaoProgressHUDView.swift */,
-				85FD4A262AD2D9BB00CD015F /* PathaoProgressHUD.swift */,
-				85D0BCD72AD67FFC00FEFD8C /* PathaoProgressHUDSpinLoader.swift */,
+				854B63482AED747100151D78 /* PathaoProgressHUD */,
 			);
 			path = TestPPHUD;
 			sourceTree = "<group>";

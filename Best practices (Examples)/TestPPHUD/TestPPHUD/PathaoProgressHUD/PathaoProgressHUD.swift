@@ -129,14 +129,9 @@ public final class PPHUD {
         PathaoProgressHUD.shared.showErrorWithStatus(message: message, config: config)
     }
 
-    /// Remove the topmost loader from the view
-    class func removeTop() {
-        PathaoProgressHUD.shared.removeTop()
-    }
-
-    /// Remove all loader from the view
-    class func removeAll() {
-        PathaoProgressHUD.shared.removeAll()
+    /// Remove the loader from the view
+    class func remove() {
+        PathaoProgressHUD.shared.remove()
     }
 }
 
@@ -168,6 +163,7 @@ fileprivate final class PathaoProgressHUD {
     }
     
     private func initWindow() {
+        window = nil
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
@@ -295,21 +291,12 @@ fileprivate final class PathaoProgressHUD {
         }
     }
     
-    func removeTop() {
+    func remove() {
         let lastSubview = self.window?.subviews.last
         if lastSubview is PathaoProgressHUDView {
             lastSubview?.removeFromSuperview()
         }
-    }
-    
-    func removeAll() {
-        guard let window = self.window else { return }
-        for view in window.subviews {
-            if view is PathaoProgressHUDView {
-                view.removeFromSuperview()
-            }
-        }
-        self.window = nil
+        window = nil
     }
 }
 

@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //testSVProgressHUD()
+        testSVProgressHUD()
         var config = Config()
         config.loaderStyle = .dark
         PPHUD.setup(config: config)
@@ -73,16 +73,13 @@ class ViewController: UIViewController {
     
     
     func testSVProgressHUD() {
-        
+        //SVProgressHUD.setBackgroundColor(.gray)
         SVProgressHUD.setDefaultStyle(.dark)
-        //SVProgressHUD.setBackgroundColor(.red)
-        
         //SVProgressHUD.setDefaultStyle(.light)
         //SVProgressHUD.showInfo(withStatus: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.")
         SVProgressHUD.show()
-        //SVProgressHUD.show(withStatus: <#T##String?#>)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 100.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
             SVProgressHUD.dismiss()
             //SVProgressHUD.show()
         }

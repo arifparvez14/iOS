@@ -61,7 +61,7 @@ class PathaoProgressHUDView: UIView {
         if config?.hudType != .show {
             if config?.dismissTime != nil {
                 DispatchQueue.main.asyncAfter(deadline: .now() + (config?.dismissTime ?? 3.0)) {
-                    PPHUD.removeTop()
+                    PPHUD.remove()
                 }
             }
         }
@@ -191,6 +191,6 @@ class PathaoProgressHUDView: UIView {
     }
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-        PPHUD.removeTop()
+        PPHUD.remove()
     }
 }
