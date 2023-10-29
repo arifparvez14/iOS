@@ -147,10 +147,10 @@ fileprivate final class PathaoProgressHUD {
     }
     
     private func setGlobalConfig() {
-        globalConfig.showTextColor = .white
-        globalConfig.loadingTextColor = .white
-        globalConfig.successTextColor = .white
-        globalConfig.errorTextColor = .white
+        globalConfig.showTextColor = .black
+        globalConfig.loadingTextColor = .black
+        globalConfig.successTextColor = .black
+        globalConfig.errorTextColor = .black
         
         globalConfig.loaderBackgroundColor = .white
         globalConfig.maskType = .clear
@@ -159,7 +159,7 @@ fileprivate final class PathaoProgressHUD {
         globalConfig.loaderImageHeight = 30.0
         
         globalConfig.dismissTime = 3.0
-        globalConfig.spinnerColor = .white
+        globalConfig.spinnerColor = .black
     }
     
     private func initWindow() {

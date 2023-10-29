@@ -23,6 +23,11 @@ class PathaoProgressHUDView: UIView {
     @IBOutlet weak private var ivHLC: NSLayoutConstraint!
     @IBOutlet weak private var ivWDL: NSLayoutConstraint!
     
+    private enum ViewType: String {
+        case spinnerView
+        case imageView
+    }
+    
     private var config: Config?
     
     //MARK: - Init
@@ -47,7 +52,7 @@ class PathaoProgressHUDView: UIView {
     //MARK: - HUD Setup
     private func showHUD() {
         
-        //set view and image view
+        //set spinnerView and imageView
         setSpinnerAndImageView()
         
         // set message label
@@ -69,7 +74,7 @@ class PathaoProgressHUDView: UIView {
         //set contendView
         setContendView()
         
-        //setMaskType
+        //set maskType
         setMaskType()
         
         //set style
@@ -77,28 +82,31 @@ class PathaoProgressHUDView: UIView {
     }
     
     
-    //MARK: - Setter and getter
+    //MARK: - Setters
     private func setSpinnerAndImageView() {
         if config?.hudType == .show {
-            spinnerView.lineWidth = 2.0
-            spinnerView.spinnerColor = config?.spinnerColor ?? .white
-            
-            imageView.isHidden = true
-            imageContainerVew.isHidden = true
+            setSpinnerView()
+            hideSpinnerOrImageView(viewType: .imageView)
         } else {
-            
-            if let isImageExist = hasStatusImage() {
-                spinnerContainerView.isHidden = true
-                spinnerView.isHidden = true
-                
-                ivHLC.constant = config?.loaderImageHeight ?? 40.0
-                ivWDL.constant = config?.loaderImageWidth ?? 40.0
-                imageView.image = getImage()
+            if hasStatusImage() != nil {
+                hideSpinnerOrImageView(viewType: .spinnerView)
+                setImageView()
             } else {
-                imageView.isHidden = true
-                imageContainerVew.isHidden = true
+                setSpinnerView()
+                hideSpinnerOrImageView(viewType: .imageView)
             }
         }
+    }
+    
+    private func setSpinnerView() {
+        spinnerView.lineWidth = 2.0
+        spinnerView.spinnerColor = config?.spinnerColor ?? .white
+    }
+    
+    private func setImageView() {
+        ivHLC.constant = config?.loaderImageHeight ?? 40.0
+        ivWDL.constant = config?.loaderImageWidth ?? 40.0
+        imageView.image = getImage()
     }
     
     private func setMaskType() {
@@ -137,12 +145,14 @@ class PathaoProgressHUDView: UIView {
     }
     
     private func setStyle() {
-        if config?.loaderStyle == .light {
+        guard let loaderStyle = config?.loaderStyle else { return }
+        
+        if loaderStyle == .light {
             messageLabel.textColor = .black
             contendView.backgroundColor = .white
             imageView.tintColor = .black
             spinnerView.spinnerColor = .black
-        } else {
+        } else if loaderStyle == .dark {
             messageLabel.textColor = .white
             contendView.backgroundColor = UIColor.init(red: 49/255, green: 49/255, blue: 49/255, alpha: 1)
             imageView.tintColor = .white
@@ -150,6 +160,7 @@ class PathaoProgressHUDView: UIView {
         }
     }
     
+    //MARK: - Getters
     private func hasStatusImage() -> Bool? {
         switch config?.hudType {
         case .show, .none:
@@ -160,6 +171,17 @@ class PathaoProgressHUDView: UIView {
             return config?.successImage != nil ? true : nil
         case .showWithError:
             return config?.errorImage != nil ? true : nil
+        }
+    }
+    
+    private func hideSpinnerOrImageView(viewType: ViewType) {
+        switch viewType {
+        case .spinnerView:
+            spinnerContainerView.isHidden = true
+            spinnerView.isHidden = true
+        case .imageView:
+            imageView.isHidden = true
+            imageContainerVew.isHidden = true
         }
     }
     
