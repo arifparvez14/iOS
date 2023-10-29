@@ -13,22 +13,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var textCountLabel: UILabel!
     
+    private let regex = "^[0-9]*$"
+    private let allowCharacters = CharacterSet(charactersIn: "!@#$")
+    private let disallowCharacters = CharacterSet(charactersIn: "!@#$")
+    private var totalCharactersSet = CharacterSet(charactersIn: "!@#$%^&*()_+{}[]|\"<>,.~`/:;?-=\\¥'£•¢")
+    
+    var inputSetType: InputSetType = .validCharacterSet(nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let regex = "^[0-9]*$"
-        //let characters = CharacterSet(charactersIn: "!@#$%^&*()")
-        customTextField.config(inputSetType: InputSetType.regex(regex))
-        
-        let characters = CharacterSet(charactersIn: "!@#$")
-        customTextField.config(inputSetType: .disallowCharacterSet(CharacterSet(charactersIn: "!@#$")))
-        
-        
-        
-        customTextField.config(inputSetType: InputSetType.disallowCharacterSet(CharacterSet(charactersIn: "!@#$")), totalCharacterSet: CharacterSet(charactersIn: "!@#$%^&*()_+{}[]|\"<>,.~`/:;"), maxLength: 10)
-        //var ch = NSCharacterSet.decimalDigits
-        
-        customTextField.config(inputSetType: .invalidCharacterSet(NSCharacterSet.decimalDigits))
+        inputSetType = .validCharacterSet(nil)
+        configTextField()
+    }
+    
+    private func configTextField() {
+        switch inputSetType {
+        case .allowCharactersSet(_):
+            customTextField.config(inputSetType: .allowCharactersSet(allowCharacters))
+        case .disallowCharacterSet(_):
+            customTextField.config(inputSetType: .disallowCharacterSet(disallowCharacters), totalCharacterSet: totalCharactersSet, maxLength: 7)
+        case .validCharacterSet(_):
+            customTextField.config(inputSetType: .validCharacterSet(NSCharacterSet.decimalDigits))
+        case .invalidCharacterSet(_):
+            customTextField.config(inputSetType: .invalidCharacterSet(NSCharacterSet.lowercaseLetters))
+        case .regex(_):
+            customTextField.config(inputSetType: InputSetType.regex(regex))
+        }
     }
     
     @IBAction func showText(_ sender: Any) {
